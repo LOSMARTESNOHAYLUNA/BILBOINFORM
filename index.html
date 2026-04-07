@@ -24,7 +24,7 @@
   .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
 
   /* TOPBAR */
-  .topbar { background: var(--black); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar { background: var(--white); border-bottom: 2px solid var(--light-gray); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; }
   .topbar__logo img { height: 44px; width: auto; }
   .topbar__badge { background: var(--orange); color: var(--black); font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 0.1em; text-transform: uppercase; }
 
@@ -39,7 +39,7 @@
   .btn--lg { padding: 20px 52px; font-size: 1.05rem; }
 
   /* HERO */
-  .hero { background: var(--black); color: var(--white); padding: 80px 24px 72px; text-align: center; }
+  .hero { background: #2d2d2d; color: var(--white); padding: 80px 24px 72px; text-align: center; }
   .hero__eyebrow { display: inline-block; background: rgba(226,142,40,0.15); border: 1px solid rgba(226,142,40,0.4); color: var(--orange-light); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 20px; border-radius: 24px; margin-bottom: 28px; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 900; color: var(--white); max-width: 700px; margin: 0 auto 22px; line-height: 1.15; }
   .hero h1 em { font-style: normal; color: var(--orange); }
@@ -63,23 +63,23 @@
   @media (max-width: 580px) { .pain__grid { grid-template-columns: 1fr; } }
   .pain__item { background: var(--white); border-left: 3px solid var(--orange); border-radius: 0 8px 8px 0; padding: 16px 20px; font-size: 0.95rem; color: var(--text-mid); line-height: 1.55; }
   .pain__item strong { color: var(--text-dark); }
-  .pain__consequence { background: var(--black); color: var(--white); border-radius: 10px; padding: 26px 30px; margin-bottom: 30px; }
-  .pain__consequence p { font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
+  .pain__consequence { background: var(--orange); color: var(--black); border-radius: 10px; padding: 26px 30px; margin-bottom: 30px; }
+  .pain__consequence p { font-size: 0.92rem; color: rgba(0,0,0,0.7); margin-bottom: 10px; }
   .pain__consequence ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; }
-  .pain__consequence li { color: var(--white); font-weight: 500; font-size: 0.95rem; }
-  .pain__consequence li::before { content: '→ '; color: var(--orange); font-weight: 700; }
+  .pain__consequence li { color: var(--black); font-weight: 600; font-size: 0.95rem; }
+  .pain__consequence li::before { content: '→ '; color: var(--black); font-weight: 700; }
   .pain__punch { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--black); font-weight: 700; line-height: 1.25; margin-bottom: 6px; }
   .pain__punch-sub { font-size: 0.95rem; color: var(--gray); }
 
   /* GIRO */
-  .turn { background: var(--black); color: var(--white); text-align: center; padding: 72px 24px; }
-  .turn .section-title { color: var(--white); }
+  .turn { background: #E28E28; color: #000000; text-align: center; padding: 72px 24px; }
+  .turn .section-title { color: var(--black); }
   .turn__nots { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 26px 0; }
-  .turn__not { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.55); font-size: 0.87rem; padding: 7px 18px; border-radius: 24px; text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.25); }
-  .turn__yes { font-size: 1rem; color: rgba(255,255,255,0.82); margin-bottom: 36px; }
+  .turn__not { background: rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.15); color: rgba(0,0,0,0.45); font-size: 0.87rem; padding: 7px 18px; border-radius: 24px; text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.25); }
+  .turn__yes { font-size: 1rem; color: rgba(0,0,0,0.8); margin-bottom: 36px; }
   .turn__yes span { display: block; margin-bottom: 8px; }
-  .turn__yes span::before { content: '✓  '; color: var(--orange); font-weight: 700; }
-  .turn__closing { font-size: 0.92rem; color: rgba(255,255,255,0.42); margin-top: 14px; font-style: italic; }
+  .turn__yes span::before { content: '✓  '; color: var(--black); font-weight: 700; }
+  .turn__closing { font-size: 0.92rem; color: rgba(0,0,0,0.55); margin-top: 14px; font-style: italic; }
 
   /* PROMESA */
   .promise { background: var(--white); }
@@ -111,11 +111,11 @@
   .subsidy-row__pct { background: rgba(226,142,40,0.12); color: #7a5615; font-weight: 700; font-size: 0.82rem; padding: 4px 12px; border-radius: 20px; }
   .collab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
   .collab-logo { height: 36px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 6px; }
-  .networking-box { background: var(--black); border-radius: 12px; padding: 28px; color: var(--white); }
+  .networking-box { background: var(--orange); border-radius: 12px; padding: 28px; color: var(--black); }
   .networking-box h3 { color: var(--orange); margin-bottom: 14px; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-  .network-item { font-size: 0.93rem; color: rgba(255,255,255,0.78); margin-bottom: 8px; padding-left: 22px; position: relative; }
-  .network-item::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
-  .network-sub { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.83rem; color: rgba(255,255,255,0.42); font-style: italic; }
+  .network-item { font-size: 0.93rem; color: rgba(0,0,0,0.8); margin-bottom: 8px; padding-left: 22px; position: relative; }
+  .network-item::before { content: '✓'; position: absolute; left: 0; color: var(--black); font-weight: 700; }
+  .network-sub { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.15); font-size: 0.83rem; color: rgba(0,0,0,0.55); font-style: italic; }
 
   /* DIFERENCIACIÓN */
   .diff { background: var(--white); text-align: center; }
@@ -127,11 +127,11 @@
   .diff__item p { font-size: 0.85rem; color: var(--gray); }
 
   /* PRECIO */
-  .pricing { background: var(--black); color: var(--white); text-align: center; }
-  .pricing .section-title { color: var(--white); }
+  .pricing { background: var(--orange); color: var(--black); text-align: center; }
+  .pricing .section-title { color: var(--black); }
   .pricing__badge { display: inline-block; background: var(--orange); color: var(--black); font-size: 3.2rem; font-family: 'Playfair Display', serif; font-weight: 900; padding: 10px 40px; border-radius: 6px; margin: 24px 0 18px; letter-spacing: 0.04em; }
-  .pricing__why { font-size: 0.93rem; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto 36px; line-height: 1.75; }
-  .pricing__why strong { color: var(--white); font-weight: 500; }
+  .pricing__why { font-size: 0.93rem; color: rgba(0,0,0,0.72); max-width: 480px; margin: 0 auto 36px; line-height: 1.75; }
+  .pricing__why strong { color: var(--black); font-weight: 600; }
 
   /* URGENCIA */
   .urgency { background: var(--off-white); }
@@ -173,7 +173,7 @@
   .closing__sign strong { color: var(--white); display: block; font-size: 1rem; margin-bottom: 2px; }
 
   /* FOOTER */
-  .footer { background: #111; color: rgba(255,255,255,0.4); text-align: center; padding: 20px; font-size: 0.78rem; }
+  .footer { background: var(--black); color: rgba(255,255,255,0.45); text-align: center; padding: 24px; font-size: 0.78rem; }
 
   /* STICKY MOBILE */
   @media (max-width: 600px) {
@@ -242,20 +242,20 @@
 <!-- GIRO -->
 <section class="turn">
   <div class="container">
-    <div class="section-label" style="color:rgba(245,168,74,0.9)">La solución</div>
+    <div class="section-label" style="color:rgba(0,0,0,0.6)">La solución</div>
     <h2 class="section-title">Por eso hemos creado algo diferente</h2>
-    <div style="font-size:1.1rem;color:rgba(255,255,255,0.72);margin-bottom:24px;">El <strong style="color:var(--white)">Club Élite de Bilboinform</strong></div>
+    <div style="font-size:1.1rem;color:var(--text-mid);margin-bottom:24px;">El <strong style="color:var(--black)">Club Élite de Bilboinform</strong></div>
     <div class="turn__nots">
       <div class="turn__not">Una charla</div>
       <div class="turn__not">Otro evento más</div>
       <div class="turn__not">Teoría sin aplicación</div>
     </div>
     <div class="turn__yes">
-      <span>Entiendes en profundidad qué está pasando en tu empresa</span>
+      <span>Entiendes exactamente dónde está tu empresa y hacia dónde va</span>
       <span>Tomas mejores decisiones, con datos reales</span>
       <span>Te rodeas de empresarios que también quieren crecer</span>
     </div>
-    <a href="#formulario" class="btn btn--orange">Quiero formar parte</a>
+    <a href="#formulario" class="btn btn--outline">Quiero formar parte</a>
     <p class="turn__closing" style="margin-top:18px;">Crecer solo es posible. Pero es lento... y caro.</p>
   </div>
 </section>
@@ -284,7 +284,7 @@
       <div class="promise__card">
         <div class="promise__card-icon">🎯</div>
         <div class="promise__card-title">Oportunidades</div>
-        <p class="promise__card-desc">Detectas colaboraciones, sinergias y clientes potenciales en el mismo espacio.</p>
+        <p class="promise__card-desc">Identificas colaboraciones y clientes potenciales que no encontrarías de otra forma.</p>
       </div>
     </div>
     <div class="promise__highlight">
@@ -339,7 +339,7 @@
     <div class="networking-box">
       <h3>🥂 &nbsp;Networking + Lunch</h3>
       <div class="network-item">Presentas tu empresa y das visibilidad a lo que haces.</div>
-      <div class="network-item">Conectas de verdad — no solo intercambias tarjetas.</div>
+      <div class="network-item">Cada conversación está facilitada para que genere confianza real, no contactos vacíos.</div>
       <div class="network-item">Detectas oportunidades reales: clientes, colaboradores, sinergias.</div>
       <div class="network-item">Os organizaremos en grupos para generar confianza desde el primer momento.</div>
       <p class="network-sub">Y sí... también intercambiaréis tarjetas. Pero bien hecho 😏</p>
@@ -368,14 +368,14 @@
 <!-- PRECIO -->
 <section class="pricing">
   <div class="container">
-    <div class="section-label" style="color:rgba(245,168,74,0.9)">Precio</div>
+    <div class="section-label" style="color:rgba(0,0,0,0.6)">Precio</div>
     <h2 class="section-title">Esto normalmente no sería gratis</h2>
     <div class="pricing__badge">GRATUITO</div>
     <p class="pricing__why">
       Este año el primer evento es <strong>gratuito para todos nuestros clientes de asesoría</strong>.<br><br>
       Porque queremos construir algo potente desde dentro, con gente comprometida. Y porque queremos agradeceros la confianza que habéis depositado en nosotros durante todos estos años.
     </p>
-    <a href="#formulario" class="btn btn--outline-white btn--lg">Reservar mi plaza gratuita</a>
+    <a href="#formulario" class="btn btn--outline btn--lg">Reservar mi plaza gratuita</a>
   </div>
 </section>
 
@@ -468,30 +468,14 @@
 
 
 <script>
-  // ─────────────────────────────────────────────
-  // CONFIGURACIÓN BREVO
-  // Cuando tengas las credenciales, rellena estas dos líneas:
-  // ─────────────────────────────────────────────
-  const BREVO_API_KEY = 'TU_API_KEY_AQUI';   // TODO: pega tu API key v3 de Brevo
-  const BREVO_LIST_ID = 0;                    // TODO: pon el ID numérico de tu lista de Brevo
-
-  // Atributos personalizados en Brevo (ajusta los nombres si los tienes distintos)
-  const ATTR_EMPRESA    = 'EMPRESA';
-  const ATTR_TELEFONO   = 'TELEFONO';
-  const ATTR_ASISTENTES = 'NUM_ASISTENTES';
-  const ATTR_SECTOR     = 'SECTOR';
-  const ATTR_PRESENTA   = 'PRESENTA_NEGOCIO';
-  // ─────────────────────────────────────────────
-
-  const form      = document.getElementById('inscripcionForm');
-  const submitBtn = document.getElementById('submitBtn');
+  const form       = document.getElementById('inscripcionForm');
+  const submitBtn  = document.getElementById('submitBtn');
   const successMsg = document.getElementById('successMsg');
   const errorMsg   = document.getElementById('errorMsg');
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // Validación básica
     const nombre  = document.getElementById('nombre').value.trim();
     const empresa = document.getElementById('empresa').value.trim();
     const email   = document.getElementById('email').value.trim();
@@ -505,42 +489,33 @@
       return;
     }
 
-    // Estado cargando
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
     errorMsg.style.display = 'none';
 
-    // Payload para Brevo
     const payload = {
-      email: email,
-      attributes: {
-        NOMBRE:             nombre,
-        [ATTR_EMPRESA]:     empresa,
-        [ATTR_TELEFONO]:    document.getElementById('telefono').value.trim(),
-        [ATTR_ASISTENTES]:  document.getElementById('asistentes').value || '1',
-        [ATTR_SECTOR]:      document.getElementById('sector').value.trim(),
-        [ATTR_PRESENTA]:    document.getElementById('presentar').value
-      },
-      listIds: [BREVO_LIST_ID],
-      updateEnabled: true
+      nombre:     nombre,
+      empresa:    empresa,
+      email:      email,
+      telefono:   document.getElementById('telefono').value.trim(),
+      asistentes: document.getElementById('asistentes').value || '1',
+      sector:     document.getElementById('sector').value.trim(),
+      presenta:   document.getElementById('presentar').value
     };
 
     try {
-      const res = await fetch('https://api.brevo.com/v3/contacts', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': BREVO_API_KEY
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
-      if (res.ok || res.status === 204 || res.status === 201) {
+      if (res.ok) {
         form.style.display = 'none';
         successMsg.style.display = 'block';
       } else {
         const data = await res.json().catch(() => ({}));
-        console.error('Brevo error:', data);
+        console.error('Error:', data);
         throw new Error(data.message || 'Error desconocido');
       }
     } catch (err) {
