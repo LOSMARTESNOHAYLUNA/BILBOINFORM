@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     attributes: {
       NOMBRE:           nombre,
       EMPRESA:          empresa,
-      TELEFONO:         telefono,
+      SMS:              telefono,
       SECTOR:           sector    || '',
       PRESENTA_NEGOCIO: presenta  || ''
     },
