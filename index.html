@@ -412,7 +412,6 @@
         <div class="form-group"><label for="empresa">Empresa *</label><input type="text" id="empresa" placeholder="Nombre de tu empresa" required></div>
         <div class="form-group"><label for="email">Email *</label><input type="email" id="email" placeholder="tu@email.com" required></div>
         <div class="form-group"><label for="telefono">Teléfono *</label><input type="tel" id="telefono" placeholder="+34 600 000 000" required></div>
-        <div class="form-group"><label for="asistentes">Nº asistentes *</label><input type="number" id="asistentes" min="1" placeholder="1" required></div>
         <div class="form-group"><label for="sector">Sector *</label><input type="text" id="sector" placeholder="Tu sector o actividad" required></div>
         <div class="form-group form-group--full">
           <label for="presentar">¿Te gustaría presentar tu negocio en próximos eventos? *</label>
@@ -490,11 +489,10 @@
     const empresa   = document.getElementById('empresa').value.trim();
     const email     = document.getElementById('email').value.trim();
     const telefono  = document.getElementById('telefono').value.trim();
-    const asistentes = document.getElementById('asistentes').value.trim();
     const sector    = document.getElementById('sector').value.trim();
     const presenta  = document.getElementById('presentar').value;
 
-    if (!nombre || !empresa || !email || !telefono || !asistentes || !sector || !presenta) {
+    if (!nombre || !empresa || !email || !telefono || !sector || !presenta) {
       alert('Por favor, rellena todos los campos obligatorios.');
       return;
     }
@@ -512,7 +510,6 @@
       empresa:    empresa,
       email:      email,
       telefono:   document.getElementById('telefono').value.trim(),
-      asistentes: document.getElementById('asistentes').value || '1',
       sector:     document.getElementById('sector').value.trim(),
       presenta:   document.getElementById('presentar').value
     };
