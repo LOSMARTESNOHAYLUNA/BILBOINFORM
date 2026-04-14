@@ -3,21 +3,20 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Método no permitido' });
   }
 
-  const { nombre, empresa, email, telefono, asistentes, sector, presenta } = req.body;
+  const { nombre, empresa, email, telefono, sector, presenta } = req.body;
 
-  if (!nombre || !empresa || !email) {
+  if (!nombre || !empresa || !email || !telefono) {
     return res.status(400).json({ message: 'Faltan campos obligatorios' });
   }
 
   const payload = {
     email,
     attributes: {
-      NOMBRE:          nombre,
-      EMPRESA:         empresa,
-      TELEFONO:        telefono  || '',
-      NUM_ASISTENTES:  asistentes || '1',
-      SECTOR:          sector    || '',
-      PRESENTA_NEGOCIO: presenta || ''
+      NOMBRE:           nombre,
+      EMPRESA:          empresa,
+      TELEFONO:         telefono,
+      SECTOR:           sector    || '',
+      PRESENTA_NEGOCIO: presenta  || ''
     },
     listIds: [parseInt(process.env.BREVO_LIST_ID) || 7],
     updateEnabled: true
