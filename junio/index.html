@@ -1,1 +1,1389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Élite Bilboinform · 2º Evento · 18 de junio · Hotel Indautxu</title>
+  <meta name="description" content="2º evento del Club Élite Bilboinform. Silvia Ceballos y Asier Ibarrondo. Equipo, reputación online y rentabilidad. 18 de junio, Hotel Indautxu, Bilbao." />
+  <meta property="og:title" content="2º Evento Club Élite Bilboinform · 18 de junio" />
+  <meta property="og:description" content="Lo que vive tu equipo acaba apareciendo en Google. Y en tu cuenta bancaria." />
+  <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --naranja: #F76205;
+      --naranja-oscuro: #C84D00;
+      --naranja-claro: #FF8B3A;
+      --negro: #0F0F0F;
+      --gris-oscuro: #1F1F1F;
+      --gris: #444;
+      --gris-claro: #777;
+      --crema: #FFF8F1;
+      --blanco: #FFFFFF;
+      --sombra: 0 10px 40px rgba(15,15,15,0.08);
+      --sombra-fuerte: 0 20px 60px rgba(247,98,5,0.25);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', -apple-system, sans-serif;
+      color: var(--negro);
+      background: var(--blanco);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      background: linear-gradient(135deg, #C84D00 0%, #F76205 50%, #FF8B3A 100%);
+      color: var(--blanco);
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .logo-box {
+      background: var(--blanco);
+      padding: 16px 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      min-height: 64px;
+    }
+
+    .logo-box img {
+      max-height: 36px;
+      width: auto;
+    }
+
+    .logo-box.placeholder {
+      color: var(--naranja);
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      /* TODO: sustituir por <img src="/logos/cdc-data.svg" alt="CDC Data Comunicación"> */
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      margin-bottom: 32px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #FFE4D1;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      max-width: 760px;
+      margin: 0 auto 24px;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    .hero-sub strong {
+      font-weight: 700;
+      color: #FFF;
+      display: block;
+      margin-top: 12px;
+      font-size: 1.1em;
+    }
+
+    .hero-datos {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .hero-datos span {
+      background: rgba(255,255,255,0.15);
+      padding: 12px 24px;
+      border-radius: 100px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .cta-principal {
+      display: inline-block;
+      background: var(--blanco);
+      color: var(--naranja);
+      padding: 20px 48px;
+      border-radius: 100px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .cta-principal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    }
+
+    .hero-precios {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .hero-precios span {
+      display: inline-block;
+      margin: 4px 12px;
+    }
+
+    /* ============ SECCIÓN POR QUÉ ============ */
+    section {
+      padding: 90px 24px;
+    }
+
+    .section-titulo {
+      text-align: center;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: var(--negro);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-titulo em {
+      color: var(--naranja);
+      font-style: italic;
+    }
+
+    .porque {
+      background: var(--crema);
+    }
+
+    .porque-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .porque-texto {
+      font-size: 1.1rem;
+      color: var(--gris);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .lista-iconos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 40px 0;
+      list-style: none;
+    }
+
+    .lista-iconos li {
+      background: var(--blanco);
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--negro);
+      border-left: 4px solid var(--naranja);
+      box-shadow: var(--sombra);
+    }
+
+    .impacto {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .impacto h3 {
+      color: var(--naranja-claro);
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .impacto ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .impacto li {
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .union-frase {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 40px;
+      color: var(--negro);
+    }
+
+    .union-frase strong {
+      color: var(--naranja);
+      font-size: 1.4rem;
+      display: block;
+      margin-top: 12px;
+    }
+
+    /* ============ PONENCIAS ============ */
+    .ponencia {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ponencia.reverse {
+      direction: rtl;
+    }
+
+    .ponencia.reverse > * {
+      direction: ltr;
+    }
+
+    .ponencia-foto {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--naranja) 0%, var(--naranja-oscuro) 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--sombra-fuerte);
+    }
+
+    .ponencia-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ponencia-foto.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 24px;
+      /* TODO: sustituir el div placeholder por <img src="/fotos/asier.jpg" alt="Asier Ibarrondo"> */
+    }
+
+    .ponencia-contenido h3 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 8px;
+      color: var(--negro);
+    }
+
+    .ponencia-rol {
+      color: var(--gris-claro);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+    }
+
+    .ponencia-rol a {
+      color: var(--naranja);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .ponencia-rol a:hover {
+      text-decoration: underline;
+    }
+
+    .ponencia-titular {
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-style: italic;
+      color: var(--naranja);
+      margin-bottom: 28px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.3;
+      border-left: 4px solid var(--naranja);
+      padding-left: 20px;
+    }
+
+    .ponencia-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .ponencia-tags span {
+      background: var(--crema);
+      color: var(--naranja-oscuro);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .ponencia-contenido p {
+      color: var(--gris);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .ponencia-contenido ul {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .ponencia-contenido ul li {
+      padding: 10px 0 10px 32px;
+      position: relative;
+      font-weight: 500;
+      color: var(--negro);
+    }
+
+    .ponencia-contenido ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--naranja);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    /* ============ EXPERIENCIA ============ */
+    .experiencia {
+      background: var(--crema);
+    }
+
+    .experiencia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .exp-card {
+      background: var(--blanco);
+      padding: 36px 28px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s ease;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .exp-card .icono {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .exp-card h4 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--negro);
+    }
+
+    .exp-card p {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+
+    /* ============ PARA QUIÉN ============ */
+    .para-quien {
+      background: var(--blanco);
+    }
+
+    .para-quien-lista {
+      max-width: 720px;
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    .para-quien-lista li {
+      padding: 18px 24px 18px 56px;
+      position: relative;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-bottom: 1px solid #EEE;
+    }
+
+    .para-quien-lista li::before {
+      content: '✔';
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      color: var(--naranja);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .para-quien-lista li:last-child {
+      border-bottom: none;
+    }
+
+    /* ============ ENTRADAS ============ */
+    .entradas {
+      background: linear-gradient(180deg, var(--crema) 0%, var(--blanco) 100%);
+    }
+
+    .entradas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .entrada-card {
+      background: var(--blanco);
+      border-radius: 24px;
+      padding: 48px 36px;
+      box-shadow: var(--sombra);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .entrada-card.destacada {
+      border-color: var(--naranja);
+      transform: scale(1.02);
+    }
+
+    .entrada-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .entrada-card.destacada:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    .entrada-badge {
+      display: inline-block;
+      background: var(--naranja);
+      color: var(--blanco);
+      padding: 4px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .entrada-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      color: var(--negro);
+    }
+
+    .entrada-precio {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--naranja);
+      margin: 16px 0 24px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .entrada-precio small {
+      font-size: 1rem;
+      color: var(--gris-claro);
+      font-weight: 400;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .entrada-incluye {
+      list-style: none;
+      margin: 0 0 32px;
+      flex-grow: 1;
+    }
+
+    .entrada-incluye li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: var(--gris);
+    }
+
+    .entrada-incluye li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--naranja);
+      font-weight: 800;
+    }
+
+    .btn-entrada {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--naranja);
+      color: var(--blanco);
+      text-align: center;
+      text-decoration: none;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-entrada:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-2px);
+    }
+
+    .btn-entrada.secundario {
+      background: var(--negro);
+    }
+
+    .btn-entrada.secundario:hover {
+      background: var(--gris-oscuro);
+    }
+
+    .btn-entrada:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ============ FORMULARIO MODAL ============ */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,15,15,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 24px;
+    }
+
+    .modal-overlay.activo {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-cerrar {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gris);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-cerrar:hover {
+      background: var(--crema);
+    }
+
+    .modal h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--negro);
+    }
+
+    .modal-subtitulo {
+      color: var(--gris);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .form-grupo {
+      margin-bottom: 18px;
+    }
+
+    .form-grupo label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--negro);
+    }
+
+    .form-grupo input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #DDD;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-grupo input:focus {
+      outline: none;
+      border-color: var(--naranja);
+    }
+
+    .form-mensaje {
+      padding: 14px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .form-mensaje.exito {
+      background: #E8F5E9;
+      color: #2E7D32;
+      border-left: 4px solid #2E7D32;
+      display: block;
+    }
+
+    .form-mensaje.error {
+      background: #FFEBEE;
+      color: #C62828;
+      border-left: 4px solid #C62828;
+      display: block;
+    }
+
+    /* ============ PRUEBA SOCIAL ============ */
+    .prueba-social {
+      background: var(--blanco);
+    }
+
+    .prueba-social-texto {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--gris);
+    }
+
+    .prueba-social-texto strong {
+      color: var(--naranja);
+    }
+
+    .fotos-evento {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .foto-evento {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--crema) 0%, #FFE4D1 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--naranja);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 16px;
+      /* TODO: sustituir por <img src="/fotos/evento1-N.jpg" alt="Primer evento Club Élite"> */
+    }
+
+    /* ============ CITA POTENTE ============ */
+    .cita-bloque {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .cita-bloque blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.3;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      color: var(--blanco);
+    }
+
+    .cita-bloque blockquote::before {
+      content: '"';
+      display: block;
+      font-size: 5rem;
+      color: var(--naranja);
+      line-height: 0.5;
+      margin-bottom: 24px;
+    }
+
+    .cita-bloque ul {
+      list-style: none;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .cita-bloque li {
+      padding: 12px 0 12px 36px;
+      position: relative;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cita-bloque li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--naranja);
+      font-weight: 800;
+    }
+
+    /* ============ CTA FINAL ============ */
+    .cta-final {
+      background: linear-gradient(135deg, var(--naranja) 0%, var(--naranja-oscuro) 100%);
+      color: var(--blanco);
+      text-align: center;
+      padding: 100px 24px;
+    }
+
+    .cta-final h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 24px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-final h2 em {
+      font-style: italic;
+      color: #FFE4D1;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .cta-final .cta-principal {
+      margin-top: 24px;
+    }
+
+    .cta-final .aforo {
+      margin-top: 28px;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--gris-oscuro);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 24px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-logos {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-logos .logo-box {
+      background: var(--blanco);
+      padding: 12px 20px;
+    }
+
+    .footer-col h5 {
+      color: var(--blanco);
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a, .footer-col p {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--naranja-claro);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+    }
+
+    .footer-lmnhl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-lmnhl a {
+      color: var(--naranja-claro);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 880px) {
+      section { padding: 64px 20px; }
+      .hero { padding: 70px 20px 60px; }
+      .ponencia {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .ponencia.reverse {
+        direction: ltr;
+      }
+      .entradas-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+      }
+      .entrada-card.destacada {
+        transform: none;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-datos {
+        gap: 12px;
+      }
+      .hero-datos span {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+      }
+      .modal {
+        padding: 28px 24px;
+      }
+    }
+
+    /* Animaciones suaves */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner > * {
+      animation: fadeUp 0.8s ease-out backwards;
+    }
+
+    .hero-logos { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.2s; }
+    .hero-sub { animation-delay: 0.3s; }
+    .hero-datos { animation-delay: 0.4s; }
+    .cta-principal { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-logos">
+        <div class="logo-box">
+          <!-- Logo Bilboinform: ajustar ruta si está en otra carpeta -->
+          <img src="/logos/bilboinform.svg" alt="Bilboinform Asesores" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800;font-size:18px&quot;>BILBOINFORM</span>'">
+        </div>
+        <div class="logo-box placeholder">
+          CDC DATA
+          <!-- TODO: sustituir cuando llegue el logo. Ej: <img src="/logos/cdc-data.svg" alt="CDC Data Comunicación"> -->
+        </div>
+      </div>
+
+      <h1>Lo que vive tu equipo… <em>acaba apareciendo en Google.</em><br>Y en tu cuenta bancaria.</h1>
+
+      <p class="hero-sub">
+        El segundo evento del Club Élite llega a Bilbao para hablar de algo que muchos empresarios todavía no han entendido:
+        <strong>👉 La experiencia del cliente empieza dentro de la empresa.</strong>
+      </p>
+
+      <p class="hero-sub" style="margin-top: 20px;">
+        Descubre cómo el liderazgo, la organización interna y la reputación online impactan directamente en tus ventas, tu rentabilidad y el crecimiento de tu negocio.
+      </p>
+
+      <div class="hero-datos">
+        <span>📅 Jueves 18 de junio</span>
+        <span>🕔 17:00 h</span>
+        <span>📍 Hotel Indautxu · Bilbao</span>
+      </div>
+
+      <a href="#entradas" class="cta-principal">👉 RESERVAR MI PLAZA</a>
+
+      <div class="hero-precios">
+        <span>🎟️ Gratuito para clientes de Bilboinform Asesores y CDC DATA Comunicación</span>
+        <span>·</span>
+        <span>💶 Entrada general: 50€</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ POR QUÉ NO TE LO PUEDES PERDER ============ -->
+  <section class="porque">
+    <div class="container">
+      <h2 class="section-titulo">Tus clientes sienten el caos interno de tu empresa… <em>aunque tú no lo veas.</em></h2>
+      <div class="porque-grid">
+        <p class="porque-texto">
+          Muchas empresas creen que sus problemas están en las ventas, en el marketing o en la competencia. Pero la realidad suele empezar mucho antes:
+        </p>
+
+        <ul class="lista-iconos">
+          <li>Equipos agotados</li>
+          <li>Mala organización</li>
+          <li>Falta de liderazgo</li>
+          <li>Estrés constante</li>
+          <li>Rotación de personal</li>
+          <li>Clientes mal atendidos</li>
+          <li>Reseñas negativas</li>
+          <li>Mala reputación online</li>
+        </ul>
+
+        <div class="impacto">
+          <h3>Y todo eso termina afectando directamente a:</h3>
+          <ul>
+            <li>✔️ la experiencia del cliente</li>
+            <li>✔️ la imagen de marca</li>
+            <li>✔️ las recomendaciones</li>
+            <li>✔️ las reseñas en Google</li>
+            <li>✔️ y, finalmente, a la rentabilidad del negocio</li>
+          </ul>
+        </div>
+
+        <p class="union-frase">
+          En este evento vamos a unir dos mundos que normalmente nadie conecta:
+          <strong>👉 personas + reputación + dinero.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PONENCIA 1 — SILVIA ============ -->
+  <section>
+    <div class="container">
+      <div class="ponencia">
+        <div class="ponencia-foto">
+          <!-- Sustituir src si la foto de Silvia tiene otra ruta -->
+          <img src="/fotos/silvia.jpg" alt="Silvia Ceballos, CEO de Bilboinform Asesores" onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='SILVIA<br>CEBALLOS'">
+        </div>
+        <div class="ponencia-contenido">
+          <h3>Silvia Ceballos</h3>
+          <p class="ponencia-rol">CEO de <a href="https://www.bilboinform.com" target="_blank" rel="noopener">Bilboinform Asesores</a></p>
+          <p class="ponencia-titular">"La experiencia del cliente empieza en la experiencia del trabajador."</p>
+
+          <div class="ponencia-tags">
+            <span>Equipos quemados</span>
+            <span>Estrés</span>
+            <span>Falta de liderazgo</span>
+            <span>Desorganización</span>
+            <span>Rotación</span>
+            <span>Mal ambiente</span>
+          </div>
+
+          <p>Muchos empresarios intentan mejorar las ventas sin mirar lo que está pasando dentro de la empresa. Pero cuando un equipo está agotado, desmotivado o mal dirigido:</p>
+
+          <ul>
+            <li>El cliente lo nota</li>
+            <li>El servicio empeora</li>
+            <li>Aparecen conflictos</li>
+            <li>Aumentan los errores</li>
+            <li>Llegan las malas reseñas</li>
+            <li>Y el negocio pierde dinero</li>
+          </ul>
+
+          <p style="margin-top: 24px;">Silvia explicará cómo convertir la gestión laboral y organizativa en una herramienta estratégica para mejorar:</p>
+
+          <ul>
+            <li>Productividad</li>
+            <li>Clima laboral</li>
+            <li>Experiencia del cliente</li>
+            <li>Reputación</li>
+            <li>Y rentabilidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PONENCIA 2 — ASIER ============ -->
+  <section style="background: var(--crema);">
+    <div class="container">
+      <div class="ponencia reverse">
+        <div class="ponencia-foto placeholder">
+          ASIER<br>IBARRONDO
+          <!-- TODO: sustituir por <img src="/fotos/asier.jpg" alt="Asier Ibarrondo, CEO de CDC Data Comunicación"> -->
+        </div>
+        <div class="ponencia-contenido">
+          <h3>Asier Ibarrondo</h3>
+          <p class="ponencia-rol">CEO de CDC DATA Comunicación</p>
+          <p class="ponencia-titular">"Cómo hacer que las reseñas de Internet impulsen tu negocio."</p>
+
+          <p>Hoy no solo te buscan. <strong>Te investigan.</strong></p>
+          <p>Y muchas veces las reseñas en Google son lo primero que determina si un cliente confía en tu empresa… o se va con otra.</p>
+
+          <p style="margin-top: 24px; font-weight: 600; color: var(--negro);">En esta ponencia descubrirás:</p>
+          <ul>
+            <li>Cómo gestionar tu reputación online</li>
+            <li>Qué es y cómo optimizar tu perfil de empresa en Google</li>
+            <li>Cómo convertir las reseñas en una herramienta de crecimiento</li>
+            <li>Cómo influye la inteligencia artificial en la reputación digital</li>
+            <li>Y cómo hacer que Google juegue a favor de tu negocio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CITA POTENTE ============ -->
+  <section class="cita-bloque">
+    <div class="container">
+      <blockquote>
+        Las reseñas negativas muchas veces empiezan antes de que el cliente salga por la puerta.
+      </blockquote>
+      <ul>
+        <li>Empiezan en el estrés</li>
+        <li>En la mala organización</li>
+        <li>En la falta de liderazgo</li>
+        <li>Y en equipos agotados</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCIA ============ -->
+  <section class="experiencia">
+    <div class="container">
+      <h2 class="section-titulo">Mucho más que <em>una charla.</em></h2>
+      <div class="experiencia-grid">
+        <div class="exp-card">
+          <div class="icono">🤝</div>
+          <h4>Networking real</h4>
+          <p>Conecta con empresarios, autónomos y profesionales de diferentes sectores.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🚀</div>
+          <h4>Oportunidades de negocio</h4>
+          <p>Comparte ideas, crea relaciones y genera nuevas colaboraciones.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🍸</div>
+          <h4>Cocktail final</h4>
+          <p>Un espacio distendido para seguir conversando y creando conexiones.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🧠</div>
+          <h4>Contenido práctico</h4>
+          <p>Ideas reales y aplicables desde el día siguiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARA QUIÉN ============ -->
+  <section class="para-quien">
+    <div class="container">
+      <h2 class="section-titulo">Este evento es <em>para ti si…</em></h2>
+      <ul class="para-quien-lista">
+        <li>Tienes una empresa o eres autónomo</li>
+        <li>Sientes que tu equipo está saturado o desorganizado</li>
+        <li>Quieres mejorar la experiencia de tus clientes</li>
+        <li>Te preocupa tu reputación online</li>
+        <li>Quieres entender cómo vender más generando confianza</li>
+        <li>Buscas rodearte de empresarios con mentalidad de crecimiento</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ENTRADAS ============ -->
+  <section class="entradas" id="entradas">
+    <div class="container">
+      <h2 class="section-titulo">Reserva <em>tu plaza</em></h2>
+      <div class="entradas-grid">
+        <div class="entrada-card destacada">
+          <span class="entrada-badge">Gratuita</span>
+          <h3>Clientes Bilboinform / CDC DATA</h3>
+          <div class="entrada-precio">0€</div>
+          <ul class="entrada-incluye">
+            <li>Acceso a las dos ponencias</li>
+            <li>Networking</li>
+            <li>Cocktail final</li>
+          </ul>
+          <button class="btn-entrada" onclick="abrirModal('gratis')">RESERVAR PLAZA</button>
+        </div>
+
+        <div class="entrada-card">
+          <span class="entrada-badge" style="background: var(--negro);">General</span>
+          <h3>Entrada para no clientes</h3>
+          <div class="entrada-precio">50€ <small>/ persona</small></div>
+          <ul class="entrada-incluye">
+            <li>Acceso completo al evento</li>
+            <li>Networking</li>
+            <li>Cocktail final</li>
+          </ul>
+          <!-- ⚠️ SUSTITUIR href por el Stripe Payment Link que pase Silvia (ej: https://buy.stripe.com/xxxxxxxxxx) -->
+          <a href="STRIPE_PAYMENT_LINK_AQUI" class="btn-entrada secundario" target="_blank" rel="noopener">COMPRAR ENTRADA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRUEBA SOCIAL ============ -->
+  <section class="prueba-social">
+    <div class="container">
+      <h2 class="section-titulo">El primer evento fue un éxito… <em>y este va un paso más allá.</em></h2>
+      <p class="prueba-social-texto">
+        Empresarios, autónomos y profesionales de diferentes sectores ya formaron parte de la inauguración del Club Élite.
+        Ahora volvemos con un evento todavía más práctico, más estratégico y más enfocado en algo clave: <strong>cómo la gestión interna y la reputación externa impactan directamente en los resultados de tu negocio.</strong>
+      </p>
+      <div class="fotos-evento">
+        <div class="foto-evento">Foto 1er evento</div>
+        <div class="foto-evento">Foto 1er evento</div>
+        <div class="foto-evento">Foto 1er evento</div>
+        <!-- TODO: sustituir cada div.foto-evento por <img src="/fotos/evento1-1.jpg" alt="Primer evento Club Élite"> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Tu empresa ya está dejando huella en Internet…<em>¿esa huella te está haciendo ganar dinero o perderlo?</em></h2>
+      <a href="#entradas" class="cta-principal">👉 QUIERO MI PLAZA</a>
+      <p class="aforo">Aforo limitado</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logos">
+          <div class="logo-box">
+            <img src="/logos/bilboinform.svg" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800&quot;>BILBOINFORM</span>'">
+          </div>
+          <div class="logo-box placeholder">CDC DATA</div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem;">Club Élite Bilboinform · 2º Evento<br>18 de junio de 2026 · Hotel Indautxu, Bilbao</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <p>Bilboinform Asesores</p>
+        <p>Barakaldo, Bizkaia</p>
+        <a href="https://www.bilboinform.com" target="_blank" rel="noopener">bilboinform.com</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="/aviso-legal.html">Aviso legal</a>
+        <a href="/politica-privacidad.html">Política de privacidad</a>
+        <a href="/politica-cookies.html">Política de cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Club Élite Bilboinform. Todos los derechos reservados.</span>
+      <span class="footer-lmnhl">Web por <a href="https://www.losmartesnohayluna.com" target="_blank" rel="noopener">Los Martes No Hay Luna</a></span>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL FORMULARIO GRATIS ============ -->
+  <div class="modal-overlay" id="modalGratis">
+    <div class="modal">
+      <button class="modal-cerrar" onclick="cerrarModal()" aria-label="Cerrar">×</button>
+      <h3>Reserva tu plaza gratuita</h3>
+      <p class="modal-subtitulo">Para clientes de Bilboinform Asesores y CDC DATA Comunicación.</p>
+
+      <form id="formGratis" onsubmit="enviarFormulario(event)">
+        <div class="form-grupo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-grupo">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-grupo">
+          <label for="telefono">Teléfono *</label>
+          <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
+        </div>
+        <div class="form-grupo">
+          <label for="empresa">Empresa *</label>
+          <input type="text" id="empresa" name="empresa" required>
+        </div>
+        <button type="submit" class="btn-entrada" id="btnEnviar">CONFIRMAR PLAZA</button>
+        <div class="form-mensaje" id="formMensaje"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(tipo) {
+      document.getElementById('modalGratis').classList.add('activo');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalGratis').classList.remove('activo');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalGratis').addEventListener('click', function(e) {
+      if (e.target === this) cerrarModal();
+    });
+
+    async function enviarFormulario(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnEnviar');
+      const mensaje = document.getElementById('formMensaje');
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      mensaje.className = 'form-mensaje';
+      mensaje.textContent = '';
+
+      const datos = {
+        nombre: document.getElementById('nombre').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
+        empresa: document.getElementById('empresa').value.trim()
+      };
+
+      try {
+        const res = await fetch('/api/subscribe-junio', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(datos)
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          mensaje.classList.add('exito');
+          mensaje.textContent = '✔ ¡Plaza confirmada! Recibirás un email con los detalles del evento.';
+          document.getElementById('formGratis').reset();
+          setTimeout(() => {
+            cerrarModal();
+            btn.disabled = false;
+            btn.textContent = 'CONFIRMAR PLAZA';
+            mensaje.className = 'form-mensaje';
+          }, 3500);
+        } else {
+          throw new Error(data.error || 'Algo ha fallado');
+        }
+      } catch (err) {
+        mensaje.classList.add('error');
+        mensaje.textContent = '✖ ' + (err.message || 'No hemos podido procesar tu reserva. Inténtalo de nuevo.');
+        btn.disabled = false;
+        btn.textContent = 'CONFIRMAR PLAZA';
+      }
+    }
+  </script>
+</body>
+</html>
