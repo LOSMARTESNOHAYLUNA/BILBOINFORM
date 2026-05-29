@@ -90,16 +90,30 @@
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
     }
 
     .hero-logos {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 24px;
       margin-bottom: 48px;
       flex-wrap: wrap;
+    }
+
+    /* En el hero el logo va directo sobre el fondo, sin caja blanca */
+    .hero .logo-box {
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+      min-height: auto;
+      border-radius: 0;
+    }
+
+    .hero .logo-box img {
+      max-height: 72px;
+      width: auto;
     }
 
     .logo-box {
@@ -129,9 +143,7 @@
       font-size: clamp(2.2rem, 5.5vw, 4.2rem);
       font-weight: 700;
       margin-bottom: 32px;
-      max-width: 950px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 850px;
     }
 
     .hero h1 em {
@@ -141,9 +153,9 @@
 
     .hero-sub {
       font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-      max-width: 760px;
-      margin: 0 auto 24px;
-      opacity: 0.95;
+      max-width: 720px;
+      margin: 0 0 24px 0;
+      opacity: 0.9;
       font-weight: 400;
     }
 
@@ -157,20 +169,19 @@
 
     .hero-datos {
       display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin: 40px 0;
+      justify-content: flex-start;
+      gap: 28px;
+      margin: 36px 0;
       flex-wrap: wrap;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 500;
     }
 
     .hero-datos span {
-      background: rgba(255,255,255,0.15);
-      padding: 12px 24px;
-      border-radius: 100px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.85);
     }
 
     .cta-principal {
@@ -798,7 +809,18 @@
       font-size: 0.9rem;
       text-align: center;
       padding: 16px;
-      /* TODO: sustituir por <img src="/fotos/evento1-N.jpg" alt="Primer evento Club Élite"> */
+      overflow: hidden;
+    }
+
+    .foto-evento:has(img) {
+      padding: 0;
+    }
+
+    .foto-evento img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ============ CITA POTENTE ============ */
@@ -1019,10 +1041,6 @@
           <!-- Logo Bilboinform: ajustar ruta si está en otra carpeta -->
           <img src="/fotos/logo-bilboinform.webp" alt="Bilboinform Asesores" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800;font-size:18px&quot;>BILBOINFORM</span>'">
         </div>
-        <div class="logo-box placeholder">
-          CDC DATA
-          <!-- TODO: sustituir cuando llegue el logo. Ej: <img src="/logos/cdc-data.svg" alt="CDC Data Comunicación"> -->
-        </div>
       </div>
 
       <h1>Lo que vive tu equipo… <em>acaba apareciendo en Google.</em><br>Y en tu cuenta bancaria.</h1>
@@ -1142,9 +1160,8 @@
   <section style="background: var(--gris-oscuro);">
     <div class="container">
       <div class="ponencia reverse">
-        <div class="ponencia-foto placeholder">
-          ASIER<br>IBARRONDO
-          <!-- TODO: sustituir por <img src="/fotos/asier.jpg" alt="Asier Ibarrondo, CEO de CDC Data Comunicación"> -->
+        <div class="ponencia-foto">
+          <img src="/fotos/Asier%20Ibarrondo.webp" alt="Asier Ibarrondo, CEO de CDC DATA Comunicación" onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='ASIER<br>IBARRONDO'">
         </div>
         <div class="ponencia-contenido">
           <h3>Asier Ibarrondo</h3>
@@ -1248,7 +1265,7 @@
           <h3>Entrada para no clientes</h3>
           <div class="entrada-precio">50€ <small>/ persona</small></div>
           <ul class="entrada-incluye">
-            <li>Acceso completo al evento</li>
+            <li>Acceso a las dos ponencias</li>
             <li>Networking</li>
             <li>Cocktail final</li>
           </ul>
@@ -1267,10 +1284,15 @@
         Ahora volvemos con un evento todavía más práctico, más estratégico y más enfocado en algo clave: <strong>cómo la gestión interna y la reputación externa impactan directamente en los resultados de tu negocio.</strong>
       </p>
       <div class="fotos-evento">
-        <div class="foto-evento">Foto 1er evento</div>
-        <div class="foto-evento">Foto 1er evento</div>
-        <div class="foto-evento">Foto 1er evento</div>
-        <!-- TODO: sustituir cada div.foto-evento por <img src="/fotos/evento1-1.jpg" alt="Primer evento Club Élite"> -->
+        <div class="foto-evento">
+          <img src="/fotos/Sala%20de%20eventos%20club%20elite.webp" alt="Sala del primer evento Club Élite" onerror="this.parentElement.innerHTML='Foto 1er evento'">
+        </div>
+        <div class="foto-evento">
+          <img src="/fotos/Formacion%20Club%20Elite.webp" alt="Formación primer evento Club Élite" onerror="this.parentElement.innerHTML='Foto 1er evento'">
+        </div>
+        <div class="foto-evento">
+          <img src="/fotos/Coktail%20Club%20Elite.webp" alt="Cocktail primer evento Club Élite" onerror="this.parentElement.innerHTML='Foto 1er evento'">
+        </div>
       </div>
     </div>
   </section>
@@ -1292,14 +1314,16 @@
           <div class="logo-box">
             <img src="/fotos/logo-bilboinform.webp" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800&quot;>BILBOINFORM</span>'">
           </div>
-          <div class="logo-box placeholder">CDC DATA</div>
+          <div class="logo-box">
+            <img src="/fotos/logo%20cdc%20data.webp" alt="CDC Data Comunicación" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800&quot;>CDC DATA</span>'">
+          </div>
         </div>
         <p style="margin-top: 20px; font-size: 0.9rem;">Club Élite Bilboinform · 2º Evento<br>18 de junio de 2026 · Hotel Indautxu, Bilbao</p>
       </div>
       <div class="footer-col">
         <h5>Contacto</h5>
         <p>Bilboinform Asesores</p>
-        <p>Barakaldo, Bizkaia</p>
+        <p>Bilbao, Bizkaia</p>
         <a href="https://www.bilboinform.com" target="_blank" rel="noopener">bilboinform.com</a>
       </div>
       <div class="footer-col">
