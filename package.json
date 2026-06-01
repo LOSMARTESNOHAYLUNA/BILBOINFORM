@@ -1,0 +1,10 @@
+{
+  "name": "bilboinform-club-elite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing pública del Club Élite de Bilboinform — clubelite.bilboinform.com",
+  "type": "module",
+  "dependencies": {
+    "stripe": "^22.2.0"
+  }
+}
