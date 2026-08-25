@@ -142,7 +142,7 @@
 
     .hero h1 em {
       font-style: italic;
-      color: #FFE4D1;
+      color: #FFFFFF;
     }
 
     .hero-sub {
@@ -857,7 +857,7 @@
 
     .cta-final h2 em {
       font-style: italic;
-      color: #FFE4D1;
+      color: #FFFFFF;
       display: block;
       margin-top: 12px;
     }
@@ -994,6 +994,195 @@
     .hero-sub { animation-delay: 0.3s; }
     .hero-datos { animation-delay: 0.4s; }
     .cta-principal { animation-delay: 0.5s; }
+
+    /* ============ CARRUSEL FOTOS EVENTO ============ */
+    .carrusel-wrapper {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .carrusel-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 8px 4px 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--naranja) transparent;
+    }
+
+    .carrusel-track::-webkit-scrollbar {
+      height: 8px;
+    }
+    .carrusel-track::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+    .carrusel-track::-webkit-scrollbar-thumb {
+      background: var(--naranja);
+      border-radius: 4px;
+    }
+
+    .carrusel-slide {
+      flex: 0 0 auto;
+      width: 320px;
+      aspect-ratio: 4/3;
+      scroll-snap-align: start;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: #EEE;
+    }
+
+    .carrusel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .carrusel-slide:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(247,98,5,0.25);
+    }
+    .carrusel-slide:hover img {
+      transform: scale(1.05);
+    }
+
+    .carrusel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--naranja);
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .carrusel-btn:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .carrusel-btn.prev { left: -8px; }
+    .carrusel-btn.next { right: -8px; }
+
+    @media (max-width: 720px) {
+      .carrusel-slide { width: 260px; }
+      .carrusel-btn { display: none; }
+    }
+
+    /* ============ LIGHTBOX ============ */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 40px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-close {
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: var(--naranja);
+      border-color: var(--naranja);
+    }
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 720px) {
+      .lightbox-prev,
+      .lightbox-next {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+      }
+      .lightbox-prev { left: 12px; }
+      .lightbox-next { right: 12px; }
+      .lightbox { padding: 20px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1013,7 +1202,7 @@
         </div>
       </div>
 
-      <p class="hero-eyebrow" style="text-transform:uppercase;letter-spacing:0.08em;font-size:0.85rem;color:#F76205;font-weight:700;margin-bottom:16px;">Evento presencial para empresarios y empresarias de Bizkaia · 1 de octubre · Hotel Spirit Gran Bilbao</p>
+      <p class="hero-eyebrow" style="display:inline-block;text-transform:uppercase;letter-spacing:0.08em;font-size:0.85rem;color:#FFFFFF;font-weight:700;margin-bottom:32px;background:rgba(0,0,0,0.2);padding:8px 18px;border-radius:100px;backdrop-filter:blur(8px);">Evento presencial para empresarios y empresarias de Bizkaia · 1 de octubre · Hotel Spirit Gran Bilbao</p>
 
       <h1>Tu empresa factura.<br><em>Pero ¿sabes dónde está realmente tu dinero?</em></h1>
 
@@ -1041,7 +1230,7 @@
       <div class="hero-precios">
         <span>🎟️ Gratuito para clientes de Bilboinform Asesores</span>
         <span>·</span>
-        <span>💶 Entrada general: 50€</span>
+        <span>💶 Entrada general: 39€</span>
       </div>
     </div>
   </header>
@@ -1216,7 +1405,7 @@
         <div class="entrada-card">
           <span class="entrada-badge" style="background: var(--negro);">General</span>
           <h3>Entrada para no clientes</h3>
-          <div class="entrada-precio">50€ <small>/ persona</small></div>
+          <div class="entrada-precio">39€ <small>/ persona</small></div>
           <ul class="entrada-incluye">
             <li>Acceso completo al evento</li>
             <li>Ejercicios prácticos por grupos</li>
@@ -1273,11 +1462,6 @@
         <p style="font-size:1.15rem;font-weight:700;color:var(--blanco);margin:0;">Spirit Hotel Gran Bilbao</p>
         <p style="color:var(--gris-claro);margin:8px 0 0;">Prieto Indalecio Hiribidea, 1 · 48004 Bilbao, Bizkaia</p>
       </div>
-      <div class="lugar-fotos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:960px;margin:0 auto;">
-        <img src="/fotos/hotel-spirit-01.webp" alt="Spirit Hotel Gran Bilbao" onerror="this.outerHTML='<div class=&quot;foto-lugar&quot; style=&quot;background:#2A2A2A;height:220px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#666;font-size:0.9rem;&quot;>Foto Spirit Hotel</div>'" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/hotel-spirit-02.webp" alt="Spirit Hotel Gran Bilbao" onerror="this.outerHTML='<div class=&quot;foto-lugar&quot; style=&quot;background:#2A2A2A;height:220px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#666;font-size:0.9rem;&quot;>Foto Spirit Hotel</div>'" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/hotel-spirit-03.webp" alt="Spirit Hotel Gran Bilbao" onerror="this.outerHTML='<div class=&quot;foto-lugar&quot; style=&quot;background:#2A2A2A;height:220px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#666;font-size:0.9rem;&quot;>Foto Spirit Hotel</div>'" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-      </div>
     </div>
   </section>
 
@@ -1288,20 +1472,50 @@
       <p style="text-align:center;max-width:640px;margin:0 auto 40px;color:var(--gris-claro);">
         Una selección de fotografías de ediciones anteriores para que veas el ambiente y la experiencia del evento.
       </p>
-      <div class="fotos-evento" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:1100px;margin:0 auto;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
-        <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp" alt="Club Élite — edición anterior" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
+      <div class="carrusel-wrapper">
+        <button class="carrusel-btn prev" onclick="scrollCarrusel(-1)" aria-label="Anterior">‹</button>
+        <div class="carrusel-track" id="carruselTrack">
+        <div class="carrusel-slide" onclick="abrirLightbox(0)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(1)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(2)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(3)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(4)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(5)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(6)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(7)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(8)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(9)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(10)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(11)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        <div class="carrusel-slide" onclick="abrirLightbox(12)">
+          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp" alt="Club Élite — edición anterior" loading="lazy">
+        </div>
+        </div>
+        <button class="carrusel-btn next" onclick="scrollCarrusel(1)" aria-label="Siguiente">›</button>
       </div>
     </div>
   </section>
@@ -1310,7 +1524,7 @@
   <section class="cta-final">
     <div class="container">
       <h2>Tu empresa factura.<br><em>Ahora toca entender mejor dónde está tu dinero y cómo invertirlo para crecer.</em></h2>
-      <p style="max-width:640px;margin:20px auto 32px;color:var(--gris-claro);font-size:1.05rem;line-height:1.6;">
+      <p style="max-width:640px;margin:20px auto 32px;color:#FFFFFF;font-size:1.05rem;line-height:1.6;font-weight:500;">
         Deja de dirigir únicamente por intuición y empieza a tomar decisiones con más información, control y criterio.
       </p>
       <a href="#entradas" class="cta-principal">👉 QUIERO MI PLAZA</a>
@@ -1328,6 +1542,7 @@
           </div>
         </div>
         <p style="margin-top: 20px; font-size: 0.9rem;">Club Élite Bilboinform · 3.er Evento<br>1 de octubre de 2026 · Hotel Spirit Gran Bilbao</p>
+        <p style="margin-top: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55);">Con la colaboración de <strong style="color: var(--naranja-claro); font-weight: 700;">Resoluzion360</strong> · Álvaro Casado</p>
       </div>
       <div class="footer-col">
         <h5>Contacto</h5>
@@ -1438,5 +1653,75 @@
       }
     }
   </script>
+
+  <!-- ============ LIGHTBOX GALERÍA ============ -->
+  <div class="lightbox" id="lightbox" onclick="cerrarLightboxSiFuera(event)">
+    <button class="lightbox-close" onclick="cerrarLightbox()" aria-label="Cerrar">×</button>
+    <button class="lightbox-prev" onclick="navLightbox(-1)" aria-label="Anterior">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" onclick="navLightbox(1)" aria-label="Siguiente">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <script>
+    // === Carrusel ===
+    function scrollCarrusel(dir) {
+      const track = document.getElementById('carruselTrack');
+      const slideWidth = track.querySelector('.carrusel-slide').offsetWidth + 16;
+      track.scrollBy({ left: slideWidth * dir * 2, behavior: 'smooth' });
+    }
+
+    // === Lightbox ===
+    const fotosLightbox = [
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp',
+      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp'
+    ];
+    let lightboxIndex = 0;
+
+    function abrirLightbox(index) {
+      lightboxIndex = index;
+      actualizarLightbox();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function cerrarLightboxSiFuera(e) {
+      if (e.target.id === 'lightbox') cerrarLightbox();
+    }
+
+    function navLightbox(dir) {
+      lightboxIndex = (lightboxIndex + dir + fotosLightbox.length) % fotosLightbox.length;
+      actualizarLightbox();
+    }
+
+    function actualizarLightbox() {
+      document.getElementById('lightboxImg').src = fotosLightbox[lightboxIndex];
+      document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + fotosLightbox.length;
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') cerrarLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+  </script>
+
 </body>
 </html>
