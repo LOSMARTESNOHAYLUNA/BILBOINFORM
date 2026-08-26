@@ -23,9 +23,9 @@
 
   <style>
     :root {
-      --naranja: #F76205;
-      --naranja-oscuro: #C84D00;
-      --naranja-claro: #FF8B3A;
+      --naranja: #FF791A;
+      --naranja-oscuro: #D96513;
+      --naranja-claro: #FF9301;
       --negro: #0F0F0F;
       --gris-oscuro: #1F1F1F;
       --gris: #444;
@@ -62,7 +62,7 @@
 
     /* ============ HERO ============ */
     .hero {
-      background: linear-gradient(135deg, #C84D00 0%, #F76205 50%, #FF8B3A 100%);
+      background: linear-gradient(135deg, #D96513 0%, #FF791A 50%, #FF9301 100%);
       color: var(--blanco);
       padding: 100px 24px 80px;
       position: relative;
@@ -110,16 +110,15 @@
 
     .logo-box {
       background: var(--blanco);
-      padding: 16px 28px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      padding: 10px 18px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      min-height: 64px;
+      min-height: auto;
     }
 
     .logo-box img {
-      max-height: 36px;
+      max-height: 44px;
       width: auto;
     }
 
@@ -1198,7 +1197,7 @@
       <div class="hero-logos">
         <div class="logo-box">
           <!-- Logo Bilboinform: ajustar ruta si está en otra carpeta -->
-          <img src="/logos/bilboinform.svg" alt="Bilboinform Asesores" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800;font-size:18px&quot;>BILBOINFORM</span>'">
+          <img src="/fotos/logo-bilboinform.png" alt="Bilboinform Asesores" onerror="this.outerHTML='<span style=&quot;color:#FF791A;font-weight:800;font-size:18px&quot;>BILBOINFORM</span>'">
         </div>
       </div>
 
@@ -1228,9 +1227,7 @@
       <a href="#entradas" class="cta-principal">👉 RESERVA TU PLAZA</a>
 
       <div class="hero-precios">
-        <span>🎟️ Gratuito para clientes de Bilboinform Asesores</span>
-        <span>·</span>
-        <span>💶 Entrada general: 39€</span>
+        <span>💶 Entrada: 39€</span>
       </div>
     </div>
   </header>
@@ -1267,7 +1264,7 @@
       <div class="ponencia">
         <div class="ponencia-foto">
           <!-- Sustituir src si la foto de Silvia tiene otra ruta -->
-          <img src="/fotos/silvia.jpg" alt="Silvia Ceballos, CEO de Bilboinform Asesores" onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='SILVIA<br>CEBALLOS'">
+          <img src="/fotos/silvia.jpg" alt="Silvia Ceballos, CEO de Bilboinform Asesores" style="object-position: center top;" onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='SILVIA<br>CEBALLOS'">
         </div>
         <div class="ponencia-contenido">
           <h3>Silvia Ceballos</h3>
@@ -1388,31 +1385,17 @@
     <div class="container">
       <h2 class="section-titulo">Reserva <em>tu plaza</em></h2>
       <p style="text-align:center;color:var(--gris-claro);margin-top:-16px;margin-bottom:32px;font-size:1.05rem;">1 de octubre · Hotel Spirit Gran Bilbao</p>
-      <div class="entradas-grid">
+      <div class="entradas-grid" style="grid-template-columns: 1fr; max-width: 460px;">
         <div class="entrada-card destacada">
-          <span class="entrada-badge">Gratuita</span>
-          <h3>Clientes de Bilboinform Asesores</h3>
-          <div class="entrada-precio">0€</div>
+          <span class="entrada-badge">Entrada</span>
+          <h3>Acceso al evento</h3>
+          <div class="entrada-precio">39€ <small>/ persona</small></div>
           <ul class="entrada-incluye">
             <li>Acceso a las dos ponencias</li>
             <li>Ejercicios prácticos por grupos</li>
             <li>Cóctel y networking</li>
           </ul>
-          <!-- ⚠️ TODO: sustituir por el Stripe Payment Link de octubre con código promocional al 100% -->
-          <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-entrada" target="_blank" rel="noopener">RESERVAR PLAZA</a>
-        </div>
-
-        <div class="entrada-card">
-          <span class="entrada-badge" style="background: var(--negro);">General</span>
-          <h3>Entrada para no clientes</h3>
-          <div class="entrada-precio">39€ <small>/ persona</small></div>
-          <ul class="entrada-incluye">
-            <li>Acceso completo al evento</li>
-            <li>Ejercicios prácticos por grupos</li>
-            <li>Cóctel y networking</li>
-          </ul>
-          <!-- ⚠️ TODO: sustituir por el Stripe Payment Link de octubre -->
-          <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-entrada secundario" target="_blank" rel="noopener">COMPRAR ENTRADA</a>
+          <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-entrada" target="_blank" rel="noopener">RESERVAR MI PLAZA</a>
         </div>
       </div>
     </div>
@@ -1424,27 +1407,27 @@
       <h2 class="section-titulo">Así será <em>la tarde</em></h2>
       <div class="timing-tabla" style="max-width:720px;margin:40px auto 0;background:#1F1F1F;border-radius:16px;overflow:hidden;">
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#F76205;font-weight:700;">16:45</span>
+          <span style="color:#FF791A;font-weight:700;">16:45</span>
           <span style="color:#F5F5F5;">Recepción y entrega de material</span>
         </div>
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#F76205;font-weight:700;">17:00 – 17:15</span>
+          <span style="color:#FF791A;font-weight:700;">17:00 – 17:15</span>
           <span style="color:#F5F5F5;">Bienvenida y presentación del evento</span>
         </div>
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#F76205;font-weight:700;">17:15 – 18:00</span>
+          <span style="color:#FF791A;font-weight:700;">17:15 – 18:00</span>
           <span style="color:#F5F5F5;">Silvia Ceballos — ¿Dónde está mi dinero?</span>
         </div>
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#F76205;font-weight:700;">18:00 – 19:00</span>
+          <span style="color:#FF791A;font-weight:700;">18:00 – 19:00</span>
           <span style="color:#F5F5F5;">Entrevista a Álvaro Casado — marketing digital, captación y publicidad</span>
         </div>
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#F76205;font-weight:700;">19:00 – 19:30</span>
+          <span style="color:#FF791A;font-weight:700;">19:00 – 19:30</span>
           <span style="color:#F5F5F5;">Ejercicios prácticos por grupos</span>
         </div>
         <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;">
-          <span style="color:#F76205;font-weight:700;">19:30 – 20:30</span>
+          <span style="color:#FF791A;font-weight:700;">19:30 – 20:30</span>
           <span style="color:#F5F5F5;">Cóctel y networking</span>
         </div>
       </div>
@@ -1538,7 +1521,7 @@
       <div>
         <div class="footer-logos">
           <div class="logo-box">
-            <img src="/logos/bilboinform.svg" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#F76205;font-weight:800&quot;>BILBOINFORM</span>'">
+            <img src="/fotos/logo-bilboinform.png" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#FF791A;font-weight:800&quot;>BILBOINFORM</span>'">
           </div>
         </div>
         <p style="margin-top: 20px; font-size: 0.9rem;">Club Élite Bilboinform · 3.er Evento<br>1 de octubre de 2026 · Hotel Spirit Gran Bilbao</p>
