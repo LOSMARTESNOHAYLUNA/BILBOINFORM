@@ -7,7 +7,11 @@
 //   STRIPE_SECRET_KEY              sk_live_... (sk_test_... en modo test)
 //   STRIPE_WEBHOOK_SECRET          whsec_... (se obtiene al crear el webhook en Stripe)
 //   BREVO_API_KEY                  (ya existe)
-//   BREVO_CLUB_ELITE_LIST_ID       ID numérico de la lista nueva "Club Élite — Asistentes"
+//   BREVO_CLUB_ELITE_LIST_ID       ID numérico de la lista maestra "Club Élite — Asistentes"
+//   BREVO_EVENT_KEY                Nombre del atributo booleano del evento actual
+//                                  (ej: EVENTO_OCTUBRE_2026)
+//   BREVO_EVENT_SLUG               Valor del atributo ULTIMO_EVENTO del evento actual
+//                                  (ej: octubre_2026)
 
 import Stripe from 'stripe';
 
@@ -65,7 +69,7 @@ async function syncContactToBrevo({
   const attributes = {
     FIRSTNAME,
     LASTNAME,
-    [eventKey]: true,                    // ej: EVENTO_JUNIO_2026 = true
+    [eventKey]: true,                    // ej: EVENTO_OCTUBRE_2026 = true
     ES_CLIENTE_BILBOINFORM: isClient,
     IMPORTE_PAGADO: amountTotal / 100,   // de céntimos a euros
     ULTIMO_EVENTO: eventLabel,
@@ -121,14 +125,25 @@ export default async function handler(req, res) {
   const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
   const BREVO_CLUB_ELITE_LIST_ID = process.env.BREVO_CLUB_ELITE_LIST_ID;
+  const BREVO_EVENT_KEY = process.env.BREVO_EVENT_KEY;
+  const BREVO_EVENT_SLUG = process.env.BREVO_EVENT_SLUG;
 
   // Comprobamos que todas las variables de entorno están listas
-  if (!STRIPE_SECRET_KEY || !STRIPE_WEBHOOK_SECRET || !BREVO_API_KEY || !BREVO_CLUB_ELITE_LIST_ID) {
+  if (
+    !STRIPE_SECRET_KEY ||
+    !STRIPE_WEBHOOK_SECRET ||
+    !BREVO_API_KEY ||
+    !BREVO_CLUB_ELITE_LIST_ID ||
+    !BREVO_EVENT_KEY ||
+    !BREVO_EVENT_SLUG
+  ) {
     console.error('Falta alguna variable de entorno requerida:', {
       hasStripeKey: !!STRIPE_SECRET_KEY,
       hasWebhookSecret: !!STRIPE_WEBHOOK_SECRET,
       hasBrevoKey: !!BREVO_API_KEY,
       hasBrevoListId: !!BREVO_CLUB_ELITE_LIST_ID,
+      hasEventKey: !!BREVO_EVENT_KEY,
+      hasEventSlug: !!BREVO_EVENT_SLUG,
     });
     return res.status(500).json({ error: 'Server misconfiguration' });
   }
@@ -168,25 +183,21 @@ export default async function handler(req, res) {
     return res.status(200).json({ received: true, error: 'no_email' });
   }
 
-  // Por ahora todos los pagos del Club Élite van etiquetados como junio 2026.
-  // Cuando Silvia cree el evento de septiembre y nos pase el nuevo Payment Link,
-  // detectaremos por session.metadata.event_id o por el line_items.price.product
-  // y enrutaremos al atributo correcto (EVENTO_SEPTIEMBRE_2026, etc.).
-  const EVENT_KEY = 'EVENTO_JUNIO_2026';
-  const EVENT_LABEL = 'junio_2026';
-
+  // El evento actual se define por variables de entorno en Vercel
+  // (BREVO_EVENT_KEY y BREVO_EVENT_SLUG). Para el próximo evento solo hay
+  // que cambiar las variables en Vercel y redesplegar; no toca código.
   try {
     await syncContactToBrevo({
       email,
       name,
       phone,
       amountTotal,
-      eventKey: EVENT_KEY,
-      eventLabel: EVENT_LABEL,
+      eventKey: BREVO_EVENT_KEY,
+      eventLabel: BREVO_EVENT_SLUG,
       promotionsConsent,
     });
     console.log(
-      `Sync OK: ${email} (${amountTotal === 0 ? 'cliente' : 'no cliente'}, consent: ${promotionsConsent})`
+      `Sync OK: ${email} (${amountTotal === 0 ? 'cliente' : 'no cliente'}, consent: ${promotionsConsent}, evento: ${BREVO_EVENT_SLUG})`
     );
     return res.status(200).json({ received: true, synced: email });
   } catch (err) {
