@@ -42,8 +42,8 @@
 
     body {
       font-family: 'Manrope', -apple-system, sans-serif;
-      color: var(--negro);
-      background: var(--blanco);
+      color: var(--blanco);
+      background: var(--negro);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -62,7 +62,9 @@
 
     /* ============ HERO ============ */
     .hero {
-      background: linear-gradient(135deg, #D96513 0%, #FF791A 50%, #FF9301 100%);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(217,101,19,0.65) 100%),
+        url('/fotos/Sala%20de%20eventos%20club%20elite.webp') center center / cover no-repeat;
       color: var(--blanco);
       padding: 100px 24px 80px;
       position: relative;
@@ -72,23 +74,9 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
-      border-radius: 50%;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -220,7 +208,7 @@
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       font-weight: 700;
       margin-bottom: 48px;
-      color: var(--negro);
+      color: var(--blanco);
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -232,7 +220,7 @@
     }
 
     .porque {
-      background: var(--crema);
+      background: var(--gris-oscuro);
     }
 
     .porque-grid {
@@ -242,7 +230,7 @@
 
     .porque-texto {
       font-size: 1.1rem;
-      color: var(--gris);
+      color: rgba(255,255,255,0.75);
       margin-bottom: 32px;
       text-align: center;
     }
@@ -300,7 +288,7 @@
       font-size: 1.3rem;
       font-weight: 600;
       margin-top: 40px;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .union-frase strong {
@@ -358,7 +346,7 @@
     .ponencia-contenido h3 {
       font-size: clamp(2rem, 3.5vw, 3rem);
       margin-bottom: 8px;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .ponencia-rol {
@@ -399,8 +387,8 @@
     }
 
     .ponencia-tags span {
-      background: var(--crema);
-      color: var(--naranja-oscuro);
+      background: rgba(255,121,26,0.15);
+      color: var(--naranja-claro);
       padding: 6px 14px;
       border-radius: 100px;
       font-size: 0.85rem;
@@ -408,7 +396,7 @@
     }
 
     .ponencia-contenido p {
-      color: var(--gris);
+      color: rgba(255,255,255,0.75);
       margin-bottom: 16px;
       font-size: 1.05rem;
     }
@@ -422,7 +410,7 @@
       padding: 10px 0 10px 32px;
       position: relative;
       font-weight: 500;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .ponencia-contenido ul li::before {
@@ -436,7 +424,7 @@
 
     /* ============ EXPERIENCIA ============ */
     .experiencia {
-      background: var(--crema);
+      background: var(--negro);
     }
 
     .experiencia-grid {
@@ -448,11 +436,11 @@
     }
 
     .exp-card {
-      background: var(--blanco);
+      background: var(--gris-oscuro);
       padding: 36px 28px;
       border-radius: 18px;
       text-align: center;
-      box-shadow: var(--sombra);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
 
@@ -470,17 +458,17 @@
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 12px;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .exp-card p {
-      color: var(--gris);
+      color: rgba(255,255,255,0.7);
       font-size: 0.95rem;
     }
 
     /* ============ PARA QUIÉN ============ */
     .para-quien {
-      background: var(--blanco);
+      background: var(--gris-oscuro);
     }
 
     .para-quien-lista {
@@ -494,7 +482,8 @@
       position: relative;
       font-size: 1.1rem;
       font-weight: 500;
-      border-bottom: 1px solid #EEE;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: var(--blanco);
     }
 
     .para-quien-lista li::before {
@@ -513,7 +502,7 @@
 
     /* ============ ENTRADAS ============ */
     .entradas {
-      background: linear-gradient(180deg, var(--crema) 0%, var(--blanco) 100%);
+      background: linear-gradient(180deg, var(--negro) 0%, var(--gris-oscuro) 100%);
     }
 
     .entradas-grid {
@@ -525,10 +514,10 @@
     }
 
     .entrada-card {
-      background: var(--blanco);
+      background: #2A2A2A;
       border-radius: 24px;
       padding: 48px 36px;
-      box-shadow: var(--sombra);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       border: 2px solid transparent;
       transition: all 0.3s ease;
       display: flex;
@@ -566,7 +555,7 @@
       margin-bottom: 8px;
       font-family: 'Manrope', sans-serif;
       font-weight: 800;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .entrada-precio {
@@ -593,7 +582,7 @@
     .entrada-incluye li {
       padding: 8px 0 8px 28px;
       position: relative;
-      color: var(--gris);
+      color: rgba(255,255,255,0.75);
     }
 
     .entrada-incluye li::before {
@@ -656,7 +645,7 @@
     }
 
     .modal {
-      background: var(--blanco);
+      background: var(--gris-oscuro);
       border-radius: 20px;
       padding: 40px;
       max-width: 500px;
@@ -684,17 +673,17 @@
     }
 
     .modal-cerrar:hover {
-      background: var(--crema);
+      background: rgba(255,255,255,0.08);
     }
 
     .modal h3 {
       font-size: 1.6rem;
       margin-bottom: 8px;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .modal-subtitulo {
-      color: var(--gris);
+      color: rgba(255,255,255,0.7);
       margin-bottom: 28px;
       font-size: 0.95rem;
     }
@@ -708,13 +697,15 @@
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 6px;
-      color: var(--negro);
+      color: var(--blanco);
     }
 
     .form-grupo input {
       width: 100%;
       padding: 14px 16px;
-      border: 1.5px solid #DDD;
+      background: var(--negro);
+      color: var(--blanco);
+      border: 1.5px solid rgba(255,255,255,0.15);
       border-radius: 12px;
       font-family: inherit;
       font-size: 1rem;
@@ -1282,7 +1273,7 @@
           <p>Facturar no significa tener ese dinero disponible.</p>
           <p>Puedes tener clientes, ventas y dinero en la cuenta y, aun así, no saber cuánto puedes utilizar realmente, cuánto deberías reservar o qué pagos tendrás que afrontar después.</p>
 
-          <p style="margin-top: 24px; font-weight: 600; color: var(--negro);">En esta ponencia descubrirás:</p>
+          <p style="margin-top: 24px; font-weight: 600; color: var(--blanco);">En esta ponencia descubrirás:</p>
           <ul>
             <li>Por qué mirar el saldo del banco no significa entender tu empresa</li>
             <li>Cómo saber mejor qué está pasando con el dinero que genera tu negocio</li>
@@ -1297,7 +1288,7 @@
   </section>
 
   <!-- ============ PONENCIA 2 — ÁLVARO CASADO ============ -->
-  <section style="background: var(--crema);">
+  <section style="background: var(--gris-oscuro);">
     <div class="container">
       <div class="ponencia reverse">
         <div class="ponencia-foto">
@@ -1311,7 +1302,7 @@
           <p>Invertir en publicidad no significa tener una estrategia de captación.</p>
           <p>Puedes destinar presupuesto a campañas y, aun así, no tener claro si estás apareciendo ante tu cliente ideal, si tu negocio está preparado para convertir esa inversión en oportunidades o si estás perdiendo dinero por falta de estrategia y criterio.</p>
 
-          <p style="margin-top: 24px; font-weight: 600; color: var(--negro);">En esta entrevista hablaremos de:</p>
+          <p style="margin-top: 24px; font-weight: 600; color: var(--blanco);">En esta entrevista hablaremos de:</p>
           <ul>
             <li>Qué debería tener claro una empresa antes de invertir dinero en publicidad</li>
             <li>La diferencia entre lanzar anuncios y construir una estrategia de captación</li>
@@ -1384,7 +1375,7 @@
   <section class="entradas" id="entradas">
     <div class="container">
       <h2 class="section-titulo">Reserva <em>tu plaza</em></h2>
-      <p style="text-align:center;color:var(--gris-claro);margin-top:-16px;margin-bottom:32px;font-size:1.05rem;">1 de octubre · Hotel Spirit Gran Bilbao</p>
+      <p style="text-align:center;color:rgba(255,255,255,0.65);margin-top:-16px;margin-bottom:32px;font-size:1.05rem;">1 de octubre · Hotel Spirit Gran Bilbao</p>
       <div class="entradas-grid" style="grid-template-columns: 1fr; max-width: 460px;">
         <div class="entrada-card destacada">
           <span class="entrada-badge">Entrada</span>
@@ -1402,7 +1393,7 @@
   </section>
 
   <!-- ============ BLOQUE 9 · TIMING ============ -->
-  <section class="timing" style="background: var(--crema); padding: 80px 20px;">
+  <section class="timing" style="background: var(--negro); padding: 80px 20px;">
     <div class="container">
       <h2 class="section-titulo">Así será <em>la tarde</em></h2>
       <div class="timing-tabla" style="max-width:720px;margin:40px auto 0;background:#1F1F1F;border-radius:16px;overflow:hidden;">
@@ -1438,21 +1429,21 @@
   <section class="lugar" style="padding: 80px 20px;">
     <div class="container">
       <h2 class="section-titulo">Nos vemos en el <em>Spirit Hotel Gran Bilbao</em></h2>
-      <p style="text-align:center;max-width:720px;margin:0 auto 40px;color:var(--gris-claro);font-size:1.1rem;line-height:1.6;">
+      <p style="text-align:center;max-width:720px;margin:0 auto 40px;color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.6;">
         El próximo <strong>1 de octubre</strong>, Club Élite reunirá aquí a empresarios y empresarias de Bizkaia para compartir una tarde de contenido práctico, conversaciones reales y nuevas conexiones.
       </p>
       <div class="lugar-datos" style="text-align:center;margin-bottom:40px;">
         <p style="font-size:1.15rem;font-weight:700;color:var(--blanco);margin:0;">Spirit Hotel Gran Bilbao</p>
-        <p style="color:var(--gris-claro);margin:8px 0 0;">Prieto Indalecio Hiribidea, 1 · 48004 Bilbao, Bizkaia</p>
+        <p style="color:rgba(255,255,255,0.65);margin:8px 0 0;">Prieto Indalecio Hiribidea, 1 · 48004 Bilbao, Bizkaia</p>
       </div>
     </div>
   </section>
 
   <!-- ============ BLOQUE 11 · ASÍ SE VIVE CLUB ÉLITE ============ -->
-  <section class="prueba-social" style="background: var(--crema); padding: 80px 20px;">
+  <section class="prueba-social" style="background: var(--gris-oscuro); padding: 80px 20px;">
     <div class="container">
       <h2 class="section-titulo">Así se vive <em>Club Élite</em></h2>
-      <p style="text-align:center;max-width:640px;margin:0 auto 40px;color:var(--gris-claro);">
+      <p style="text-align:center;max-width:640px;margin:0 auto 40px;color:rgba(255,255,255,0.7);">
         Una selección de fotografías de ediciones anteriores para que veas el ambiente y la experiencia del evento.
       </p>
       <div class="carrusel-wrapper">
