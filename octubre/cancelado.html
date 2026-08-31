@@ -19,46 +19,54 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Manrope', sans-serif;
-      background: #FFF8F1;
+      background: #0F0F0F;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
+      color: #fff;
     }
     .card {
-      background: #fff;
+      background: #1F1F1F;
+      color: #fff;
       max-width: 520px;
       padding: 56px 40px;
       border-radius: 24px;
       text-align: center;
-      box-shadow: 0 10px 40px rgba(15,15,15,0.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin-bottom: 16px;
-      color: #0F0F0F;
+      color: #fff;
     }
     p {
-      color: #555;
-      margin-bottom: 16px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
       font-size: 1.05rem;
     }
     .btn {
       display: inline-block;
-      background: #F76205;
+      background: #FF791A;
       color: #fff;
       padding: 14px 32px;
       border-radius: 100px;
       text-decoration: none;
       font-weight: 700;
       margin: 12px 8px;
+      transition: background 0.2s ease;
     }
+    .btn:hover { background: #D96513; }
     .btn.secundario {
       background: transparent;
-      color: #F76205;
-      border: 2px solid #F76205;
+      color: #FF791A;
+      border: 2px solid #FF791A;
+    }
+    .btn.secundario:hover {
+      background: rgba(255,121,26,0.1);
     }
   </style>
 </head>
@@ -72,8 +80,8 @@
     <div style="font-size: 3rem; margin-bottom: 16px;">😔</div>
     <h1>El pago se ha cancelado</h1>
     <p>No te preocupes, no se ha realizado ningún cargo. Tu plaza sigue disponible si quieres intentarlo de nuevo.</p>
-    <a href="/junio/#entradas" class="btn">Volver a intentarlo</a>
-    <a href="/junio/" class="btn secundario">Volver a la landing</a>
+    <a href="/octubre/#entradas" class="btn">Volver a intentarlo</a>
+    <a href="/octubre/" class="btn secundario">Volver a la landing</a>
   </div>
 </body>
 </html>
