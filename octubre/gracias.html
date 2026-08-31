@@ -19,7 +19,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Manrope', sans-serif;
-      background: linear-gradient(135deg, #C84D00 0%, #F76205 50%, #FF8B3A 100%);
+      background: #0F0F0F;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -28,14 +28,15 @@
       color: #fff;
     }
     .card {
-      background: #fff;
-      color: #0F0F0F;
+      background: #1F1F1F;
+      color: #fff;
       max-width: 560px;
       width: 100%;
       padding: 56px 40px;
       border-radius: 24px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     .check {
       width: 80px;
@@ -49,27 +50,28 @@
       margin: 0 auto 28px;
       font-size: 2.5rem;
       font-weight: 800;
+      box-shadow: 0 8px 24px rgba(46,125,50,0.4);
     }
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       margin-bottom: 16px;
-      color: #0F0F0F;
+      color: #fff;
     }
     p {
-      color: #555;
+      color: rgba(255,255,255,0.75);
       margin-bottom: 16px;
       font-size: 1.05rem;
     }
     .datos {
-      background: #FFF8F1;
+      background: #2A2A2A;
       border-radius: 16px;
       padding: 24px;
       margin: 28px 0;
       text-align: left;
     }
     .datos strong {
-      color: #F76205;
+      color: #FF791A;
       display: block;
       margin-bottom: 4px;
       font-size: 0.85rem;
@@ -78,25 +80,29 @@
     }
     .datos .row {
       padding: 8px 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.9);
     }
     .datos .row:last-child { border-bottom: none; }
     .btn {
       display: inline-block;
-      background: #F76205;
+      background: #FF791A;
       color: #fff;
       padding: 14px 32px;
       border-radius: 100px;
       text-decoration: none;
       font-weight: 700;
       margin-top: 16px;
+      transition: background 0.2s ease;
     }
-    .btn:hover { background: #C84D00; }
+    .btn:hover { background: #D96513; }
     .nota {
       font-size: 0.85rem;
-      color: #888;
+      color: rgba(255,255,255,0.55);
       margin-top: 24px;
     }
+    .nota a { color: #FF791A; text-decoration: none; }
+    .nota a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -108,28 +114,28 @@
   <div class="card">
     <div class="check">✓</div>
     <h1>¡Pago confirmado!</h1>
-    <p>Hemos recibido tu pago de <strong style="color:#F76205">50€</strong>. Tu plaza para el 2º evento del Club Élite Bilboinform está reservada.</p>
+    <p>Tu plaza para el 3.er evento del Club Élite Bilboinform está reservada.</p>
 
     <div class="datos">
       <div class="row">
         <strong>Evento</strong>
-        2º Evento Club Élite Bilboinform
+        3.er Evento Club Élite Bilboinform
       </div>
       <div class="row">
         <strong>Fecha</strong>
-        Jueves 18 de junio · 17:00 h
+        Jueves 1 de octubre · 16:45 h
       </div>
       <div class="row">
         <strong>Lugar</strong>
-        Hotel Indautxu · Bilbao
+        Hotel Spirit Gran Bilbao
       </div>
     </div>
 
     <p>Recibirás un email con tu confirmación y los detalles prácticos del evento en los próximos minutos.</p>
 
-    <a href="/junio/" class="btn">Volver a la landing</a>
+    <a href="/octubre/" class="btn">Volver a la landing</a>
 
-    <p class="nota">Si tienes cualquier duda, escríbenos a <a href="mailto:info@bilboinform.com" style="color:#F76205">info@bilboinform.com</a></p>
+    <p class="nota">Si tienes cualquier duda, escríbenos a <a href="mailto:info@bilboinform.com">info@bilboinform.com</a></p>
   </div>
 </body>
 </html>
