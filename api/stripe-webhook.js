@@ -49,40 +49,16 @@ function splitName(fullName) {
   };
 }
 
-async function syncContactToBrevo({
-  email,
-  name,
-  phone,
-  amountTotal,
-  eventKey,
-  eventLabel,
-  promotionsConsent,
-}) {
+// PASO 1 — Crear o actualizar el contacto con sus atributos.
+// Nota: NO pasamos listIds aquí porque Brevo ignora silenciosamente la
+// asignación a listas cuando el contacto ya existe en otras listas.
+// La asignación a la lista la hacemos aparte en el paso 2.
+async function upsertBrevoContact({ email, attributes }) {
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
-  const BREVO_CLUB_ELITE_LIST_ID = parseInt(process.env.BREVO_CLUB_ELITE_LIST_ID, 10);
-
-  const { FIRSTNAME, LASTNAME } = splitName(name);
-  const SMS = normalizePhone(phone);
-  const isClient = amountTotal === 0;
-  const today = new Date().toISOString().split('T')[0];
-
-  const attributes = {
-    FIRSTNAME,
-    LASTNAME,
-    [eventKey]: true,                    // ej: EVENTO_OCTUBRE_2026 = true
-    ES_CLIENTE_BILBOINFORM: isClient,
-    IMPORTE_PAGADO: amountTotal / 100,   // de céntimos a euros
-    ULTIMO_EVENTO: eventLabel,
-    CONSENT_MARKETING: promotionsConsent,
-    FECHA_ULTIMA_INSCRIPCION: today,
-  };
-
-  if (SMS) attributes.SMS = SMS;
 
   const payload = {
     email: email.toLowerCase().trim(),
     attributes,
-    listIds: [BREVO_CLUB_ELITE_LIST_ID],
     updateEnabled: true,
   };
 
@@ -104,16 +80,108 @@ async function syncContactToBrevo({
     } catch {
       parsedError = errorBody;
     }
-    // Edge case: si llega aquí con duplicate_parameter pese a updateEnabled,
-    // lo tratamos como éxito (ya estaba registrado).
     if (parsedError?.code === 'duplicate_parameter') {
-      console.log('Contacto ya existía, actualizado:', email);
-      return { ok: true, updated: true };
+      // Ya existía, se ha actualizado
+      return { ok: true, existed: true };
     }
-    throw new Error(`Brevo ${response.status}: ${JSON.stringify(parsedError)}`);
+    throw new Error(`Brevo upsert ${response.status}: ${JSON.stringify(parsedError)}`);
   }
 
-  return { ok: true };
+  return { ok: true, existed: response.status === 204 };
+}
+
+// PASO 2 — Añadir el contacto a la lista concreta.
+// Endpoint específico que sí funciona con contactos existentes.
+async function addContactToBrevoList({ email, listId }) {
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+
+  const response = await fetch(
+    `https://api.brevo.com/v3/contacts/lists/${listId}/contacts/add`,
+    {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        emails: [email.toLowerCase().trim()],
+      }),
+    }
+  );
+
+  const bodyText = await response.text();
+  let parsed;
+  try {
+    parsed = JSON.parse(bodyText);
+  } catch {
+    parsed = bodyText;
+  }
+
+  if (response.ok) {
+    return { ok: true, added: true, response: parsed };
+  }
+
+  // 400 con "Contact already in list" también es éxito para nosotros
+  if (
+    response.status === 400 &&
+    (parsed?.message?.toLowerCase?.().includes('already in list') ||
+      parsed?.code === 'invalid_parameter')
+  ) {
+    return { ok: true, alreadyInList: true };
+  }
+
+  throw new Error(`Brevo addToList ${response.status}: ${JSON.stringify(parsed)}`);
+}
+
+// Sync completo del contacto: upsert de atributos + añadir a lista
+async function syncContactToBrevo({
+  email,
+  name,
+  phone,
+  amountTotal,
+  eventKey,
+  eventLabel,
+  promotionsConsent,
+}) {
+  const BREVO_CLUB_ELITE_LIST_ID = parseInt(
+    process.env.BREVO_CLUB_ELITE_LIST_ID,
+    10
+  );
+
+  const { FIRSTNAME, LASTNAME } = splitName(name);
+  const SMS = normalizePhone(phone);
+  const isClient = amountTotal === 0;
+  const today = new Date().toISOString().split('T')[0];
+
+  const attributes = {
+    FIRSTNAME,
+    LASTNAME,
+    [eventKey]: true,                    // ej: EVENTO_OCTUBRE_2026 = true
+    ES_CLIENTE_BILBOINFORM: isClient,
+    IMPORTE_PAGADO: amountTotal / 100,   // de céntimos a euros
+    ULTIMO_EVENTO: eventLabel,
+    CONSENT_MARKETING: promotionsConsent,
+    FECHA_ULTIMA_INSCRIPCION: today,
+  };
+
+  if (SMS) attributes.SMS = SMS;
+
+  // Paso 1: crear/actualizar contacto con atributos
+  const upsertResult = await upsertBrevoContact({ email, attributes });
+
+  // Paso 2: asegurarnos de que está en la lista Club Élite
+  const listResult = await addContactToBrevoList({
+    email,
+    listId: BREVO_CLUB_ELITE_LIST_ID,
+  });
+
+  return {
+    ok: true,
+    contactExisted: upsertResult.existed,
+    addedToList: listResult.added || false,
+    alreadyInList: listResult.alreadyInList || false,
+  };
 }
 
 export default async function handler(req, res) {
@@ -187,7 +255,7 @@ export default async function handler(req, res) {
   // (BREVO_EVENT_KEY y BREVO_EVENT_SLUG). Para el próximo evento solo hay
   // que cambiar las variables en Vercel y redesplegar; no toca código.
   try {
-    await syncContactToBrevo({
+    const result = await syncContactToBrevo({
       email,
       name,
       phone,
@@ -197,9 +265,9 @@ export default async function handler(req, res) {
       promotionsConsent,
     });
     console.log(
-      `Sync OK: ${email} (${amountTotal === 0 ? 'cliente' : 'no cliente'}, consent: ${promotionsConsent}, evento: ${BREVO_EVENT_SLUG})`
+      `Sync OK: ${email} (${amountTotal === 0 ? 'cliente' : 'no cliente'}, consent: ${promotionsConsent}, evento: ${BREVO_EVENT_SLUG}, existed: ${result.contactExisted}, addedToList: ${result.addedToList}, alreadyInList: ${result.alreadyInList})`
     );
-    return res.status(200).json({ received: true, synced: email });
+    return res.status(200).json({ received: true, synced: email, ...result });
   } catch (err) {
     console.error('Brevo sync failed for', email, '-', err.message);
     // Devolvemos 200 igualmente: Stripe reintentaría hasta 3 días si recibe 5xx,
