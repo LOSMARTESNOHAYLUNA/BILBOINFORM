@@ -49,19 +49,16 @@ function splitName(fullName) {
   };
 }
 
-// PASO 1 — Crear o actualizar el contacto con sus atributos.
-// Nota: NO pasamos listIds aquí porque Brevo ignora silenciosamente la
-// asignación a listas cuando el contacto ya existe en otras listas.
-// La asignación a la lista la hacemos aparte en el paso 2.
-async function upsertBrevoContact({ email, attributes }) {
+// Llamada cruda a POST /v3/contacts (upsert).
+// Devuelve { status, body } sin lanzar excepción, para poder decidir
+// en el llamador si reintentar o no.
+async function callBrevoUpsert({ email, attributes }) {
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
-
   const payload = {
     email: email.toLowerCase().trim(),
     attributes,
     updateEnabled: true,
   };
-
   const response = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
@@ -71,30 +68,46 @@ async function upsertBrevoContact({ email, attributes }) {
     },
     body: JSON.stringify(payload),
   });
-
   const bodyText = await response.text();
-  console.log(`[Brevo upsert] ${response.status} ${response.statusText || ''} — body: ${bodyText || '(empty)'}`);
-
-  if (response.status === 204) {
-    // Contacto existía y se actualizó
-    return { ok: true, existed: true };
-  }
-  if (response.status === 201) {
-    // Contacto nuevo creado
-    return { ok: true, existed: false };
-  }
-  if (response.ok) {
-    return { ok: true, existed: null };
-  }
-
-  // Error
-  let parsedError;
+  let parsed;
   try {
-    parsedError = JSON.parse(bodyText);
+    parsed = JSON.parse(bodyText);
   } catch {
-    parsedError = { raw: bodyText };
+    parsed = { raw: bodyText };
   }
-  throw new Error(`Brevo upsert ${response.status}: ${JSON.stringify(parsedError)}`);
+  return { status: response.status, ok: response.ok, body: parsed, rawBody: bodyText };
+}
+
+// PASO 1 — Crear o actualizar el contacto con sus atributos.
+// Si falla por SMS duplicado (que Brevo trata como atributo único),
+// se reintenta sin SMS: perdemos el teléfono en este contacto (ya existe
+// asociado a otro), pero el resto de datos entran bien y podemos añadirlo
+// a la lista en el paso 2.
+async function upsertBrevoContact({ email, attributes }) {
+  // Primer intento con todos los atributos
+  let result = await callBrevoUpsert({ email, attributes });
+  console.log(`[Brevo upsert] ${result.status} — body: ${result.rawBody || '(empty)'}`);
+
+  const isSmsDuplicate =
+    result.status === 400 &&
+    result.body?.code === 'duplicate_parameter' &&
+    typeof result.body?.message === 'string' &&
+    result.body.message.toUpperCase().includes('SMS');
+
+  if (isSmsDuplicate && attributes.SMS) {
+    // Segundo intento sin SMS
+    console.log(`[Brevo upsert] SMS duplicado detectado, reintentando sin teléfono para ${email}`);
+    const attrsSinSms = { ...attributes };
+    delete attrsSinSms.SMS;
+    result = await callBrevoUpsert({ email, attributes: attrsSinSms });
+    console.log(`[Brevo upsert retry sin SMS] ${result.status} — body: ${result.rawBody || '(empty)'}`);
+  }
+
+  if (result.status === 204) return { ok: true, existed: true };
+  if (result.status === 201) return { ok: true, existed: false };
+  if (result.ok) return { ok: true, existed: null };
+
+  throw new Error(`Brevo upsert ${result.status}: ${JSON.stringify(result.body)}`);
 }
 
 // PASO 2 — Añadir el contacto a la lista concreta.
@@ -131,7 +144,6 @@ async function addContactToBrevoList({ email, listId }) {
     const success = Array.isArray(parsed?.contacts?.success) ? parsed.contacts.success : [];
     const failure = Array.isArray(parsed?.contacts?.failure) ? parsed.contacts.failure : [];
     if (failure.length > 0 && success.length === 0) {
-      // Todos fallaron aunque el status es 2xx
       throw new Error(`Brevo addToList todos los emails fallaron: ${JSON.stringify(failure)}`);
     }
     return { ok: true, added: success.length > 0, failures: failure };
