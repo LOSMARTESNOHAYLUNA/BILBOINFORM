@@ -72,22 +72,29 @@ async function upsertBrevoContact({ email, attributes }) {
     body: JSON.stringify(payload),
   });
 
-  if (!response.ok && response.status !== 204) {
-    const errorBody = await response.text();
-    let parsedError;
-    try {
-      parsedError = JSON.parse(errorBody);
-    } catch {
-      parsedError = errorBody;
-    }
-    if (parsedError?.code === 'duplicate_parameter') {
-      // Ya existía, se ha actualizado
-      return { ok: true, existed: true };
-    }
-    throw new Error(`Brevo upsert ${response.status}: ${JSON.stringify(parsedError)}`);
+  const bodyText = await response.text();
+  console.log(`[Brevo upsert] ${response.status} ${response.statusText || ''} — body: ${bodyText || '(empty)'}`);
+
+  if (response.status === 204) {
+    // Contacto existía y se actualizó
+    return { ok: true, existed: true };
+  }
+  if (response.status === 201) {
+    // Contacto nuevo creado
+    return { ok: true, existed: false };
+  }
+  if (response.ok) {
+    return { ok: true, existed: null };
   }
 
-  return { ok: true, existed: response.status === 204 };
+  // Error
+  let parsedError;
+  try {
+    parsedError = JSON.parse(bodyText);
+  } catch {
+    parsedError = { raw: bodyText };
+  }
+  throw new Error(`Brevo upsert ${response.status}: ${JSON.stringify(parsedError)}`);
 }
 
 // PASO 2 — Añadir el contacto a la lista concreta.
@@ -95,43 +102,52 @@ async function upsertBrevoContact({ email, attributes }) {
 async function addContactToBrevoList({ email, listId }) {
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
 
-  const response = await fetch(
-    `https://api.brevo.com/v3/contacts/lists/${listId}/contacts/add`,
-    {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'api-key': BREVO_API_KEY,
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        emails: [email.toLowerCase().trim()],
-      }),
-    }
-  );
+  const url = `https://api.brevo.com/v3/contacts/lists/${listId}/contacts/add`;
+  const requestBody = { emails: [email.toLowerCase().trim()] };
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'api-key': BREVO_API_KEY,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(requestBody),
+  });
 
   const bodyText = await response.text();
+  console.log(`[Brevo addToList ${listId}] ${response.status} — sent: ${JSON.stringify(requestBody)} — body: ${bodyText || '(empty)'}`);
+
   let parsed;
   try {
     parsed = JSON.parse(bodyText);
   } catch {
-    parsed = bodyText;
+    parsed = { raw: bodyText };
   }
 
+  // Éxito directo (201): contacto añadido a la lista
   if (response.ok) {
-    return { ok: true, added: true, response: parsed };
+    // Brevo devuelve { contacts: { success: [...], failure: [...] } }
+    const success = Array.isArray(parsed?.contacts?.success) ? parsed.contacts.success : [];
+    const failure = Array.isArray(parsed?.contacts?.failure) ? parsed.contacts.failure : [];
+    if (failure.length > 0 && success.length === 0) {
+      // Todos fallaron aunque el status es 2xx
+      throw new Error(`Brevo addToList todos los emails fallaron: ${JSON.stringify(failure)}`);
+    }
+    return { ok: true, added: success.length > 0, failures: failure };
   }
 
-  // 400 con "Contact already in list" también es éxito para nosotros
+  // 400 con mensaje explícito de "already in list"
   if (
     response.status === 400 &&
-    (parsed?.message?.toLowerCase?.().includes('already in list') ||
-      parsed?.code === 'invalid_parameter')
+    typeof parsed?.message === 'string' &&
+    parsed.message.toLowerCase().includes('already in list')
   ) {
     return { ok: true, alreadyInList: true };
   }
 
-  throw new Error(`Brevo addToList ${response.status}: ${JSON.stringify(parsed)}`);
+  // Cualquier otro error se lanza para que quede en el log
+  throw new Error(`Brevo addToList ${response.status} — ${JSON.stringify(parsed)}`);
 }
 
 // Sync completo del contacto: upsert de atributos + añadir a lista
@@ -148,6 +164,8 @@ async function syncContactToBrevo({
     process.env.BREVO_CLUB_ELITE_LIST_ID,
     10
   );
+
+  console.log(`[Sync inicio] email=${email} listId=${BREVO_CLUB_ELITE_LIST_ID} eventKey=${eventKey} eventLabel=${eventLabel}`);
 
   const { FIRSTNAME, LASTNAME } = splitName(name);
   const SMS = normalizePhone(phone);
