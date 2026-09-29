@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,13 +19,12 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Élite Bilboinform · 3.er Evento · 1 de octubre · Hotel Spirit Gran Bilbao</title>
-  <meta name="description" content="3.er evento del Club Élite Bilboinform. Silvia Ceballos y Álvaro Casado. Control del dinero y estrategia de captación con publicidad. 1 de octubre, Hotel Spirit Gran Bilbao." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Club Élite Bilboinform · 3.er Evento · 1 de octubre · Spirit Hotel Gran Bilbao</title>
+  <meta name="description" content="3.er evento del Club Élite Bilboinform. 1 de octubre, 16:45 h, Spirit Hotel Gran Bilbao. Control del dinero, captación de clientes y networking para empresarios de Bizkaia. Entrada 39 € con acceso de regalo al Radar «¿Dónde está mi dinero?»." />
   <meta property="og:title" content="3.er Evento Club Élite Bilboinform · 1 de octubre" />
-  <meta property="og:description" content="Lo que vive tu equipo acaba apareciendo en Google. Y en tu cuenta bancaria." />
+  <meta property="og:description" content="Este jueves, descubre qué mirar para dejar de dirigir tu empresa a ciegas." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,24 +38,26 @@
       --naranja-claro: #FF9301;
       --negro: #0F0F0F;
       --gris-oscuro: #1F1F1F;
-      --gris: #444;
-      --gris-claro: #777;
-      --crema: #FFF8F1;
+      --card: #2A2A2A;
       --blanco: #FFFFFF;
-      --sombra: 0 10px 40px rgba(15,15,15,0.08);
-      --sombra-fuerte: 0 20px 60px rgba(247,98,5,0.25);
+      --texto: rgba(255,255,255,0.84);
+      --texto-suave: rgba(255,255,255,0.68);
+      --linea: rgba(255,255,255,0.10);
+      --sec-y: 88px;
+      --sec-x: 24px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Manrope', -apple-system, sans-serif;
+      font-size: 1.0625rem;
       color: var(--blanco);
       background: var(--negro);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
     }
 
     h1, h2, h3, h4 {
@@ -65,251 +66,201 @@
       letter-spacing: -0.01em;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ============ HERO ============ */
-    .hero {
-      background:
-        linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.82) 50%, rgba(217,101,19,0.75) 100%),
-        url('/fotos/Coktail%20Club%20Elite.webp') center center / cover no-repeat;
-      color: var(--blanco);
-      padding: 100px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-
-    .logo-box {
-      background: var(--blanco);
-      padding: 10px 18px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      min-height: auto;
-    }
-
-    .logo-box img {
-      max-height: 44px;
-      width: auto;
-    }
-
-    .logo-box.placeholder {
-      color: var(--naranja);
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: 0.5px;
-      /* TODO: sustituir por <img src="/logos/cdc-data.svg" alt="CDC Data Comunicación"> */
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-      font-weight: 700;
-      margin-bottom: 32px;
-      max-width: 950px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: #FFFFFF;
-    }
-
-    .hero-sub {
-      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-      max-width: 760px;
-      margin: 0 auto 24px;
-      opacity: 0.95;
-      font-weight: 400;
-    }
-
-    .hero-sub strong {
-      font-weight: 700;
-      color: #FFF;
-      display: block;
-      margin-top: 12px;
-      font-size: 1.1em;
-    }
-
-    .hero-datos {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin: 40px 0;
-      flex-wrap: wrap;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .hero-datos span {
-      background: rgba(255,255,255,0.15);
-      padding: 12px 24px;
-      border-radius: 100px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .cta-principal {
-      display: inline-block;
-      background: var(--blanco);
-      color: var(--naranja);
-      padding: 20px 48px;
-      border-radius: 100px;
-      font-size: 1.15rem;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-    }
-
-    .cta-principal:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
-    }
-
-    .hero-precios {
-      margin-top: 28px;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    .hero-precios span {
-      display: inline-block;
-      margin: 4px 12px;
-    }
-
-    /* ============ SECCIÓN POR QUÉ ============ */
-    section {
-      padding: 90px 24px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    section { padding: var(--sec-y) var(--sec-x); }
 
     .section-titulo {
       text-align: center;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       font-weight: 700;
-      margin-bottom: 48px;
-      color: var(--blanco);
+      margin: 0 auto 44px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section-titulo em {
-      color: var(--naranja);
-      font-style: italic;
-    }
-
-    .porque {
-      background: var(--gris-oscuro);
-    }
-
-    .porque-grid {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .porque-texto {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .lista-iconos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin: 40px 0;
-      list-style: none;
-    }
-
-    .lista-iconos li {
-      background: var(--blanco);
-      padding: 20px 24px;
-      border-radius: 12px;
-      font-weight: 600;
-      color: var(--negro);
-      border-left: 4px solid var(--naranja);
-      box-shadow: var(--sombra);
-    }
-
-    .impacto {
-      background: var(--negro);
       color: var(--blanco);
-      padding: 40px;
-      border-radius: 20px;
-      margin-top: 40px;
+    }
+    .section-titulo em { color: var(--naranja); font-style: italic; }
+    .titulo-caps { font-size: clamp(1.5rem, 3.3vw, 2.4rem); text-transform: uppercase; line-height: 1.2; }
+
+    /* ============ BOTÓN DE RESERVA (mismo en toda la página) ============ */
+    .btn-reserva {
+      display: inline-block;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      line-height: 1.2;
+      padding: 20px 44px;
+      min-height: 60px;
+      border-radius: 100px;
+      box-shadow: 0 12px 36px rgba(255,121,26,0.35);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-reserva:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+    .btn-reserva:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    .btn-reserva.grande { font-size: 1.25rem; padding: 24px 56px; min-height: 68px; }
+
+    /* ============ 1. HERO ============ */
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.82) 50%, rgba(217,101,19,0.75) 100%),
+        url('/fotos/Coktail%20Club%20Elite.webp') center center / cover no-repeat;
+      color: var(--blanco);
+      padding: 84px var(--sec-x) 76px;
       text-align: center;
     }
+    .hero-inner { max-width: 920px; margin: 0 auto; animation: entrada 0.7s ease-out both; }
+    .hero-logos { margin-bottom: 40px; }
 
-    .impacto h3 {
-      color: var(--naranja-claro);
-      font-size: 1.4rem;
-      margin-bottom: 24px;
+    .logo-box {
+      background: var(--blanco);
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
     }
+    .logo-box img { max-height: 44px; width: auto; display: block; }
 
-    .impacto ul {
-      list-style: none;
+    .hero h1 {
+      font-size: clamp(2.1rem, 5.6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .hero h1 em { font-style: italic; color: #FFFFFF; }
+
+    .hero-sub {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: rgba(255,255,255,0.92);
+    }
+    .hero-sub.destacado { font-weight: 700; color: #FFFFFF; }
+
+    .hero-temas {
+      max-width: 760px;
+      margin: 26px auto 0;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+      line-height: 1.7;
+    }
+    .hero-temas b { color: var(--naranja); font-weight: 800; padding: 0 6px; }
+
+    .hero-datos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
+      margin: 32px 0 36px;
+      font-weight: 800;
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
-
-    .impacto li {
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.08);
+    .hero-datos span {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 12px 24px;
       border-radius: 100px;
-      font-weight: 500;
     }
+    .hero-nota { margin-top: 22px; font-size: 1rem; color: rgba(255,255,255,0.85); }
 
-    .union-frase {
+    /* ============ 2. REGALO ============ */
+    .regalo { padding: calc(var(--sec-y) * 0.6) var(--sec-x); }
+    .regalo-card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #2A2A2A 0%, #1F1F1F 100%);
+      border: 2px solid var(--naranja);
+      border-radius: 24px;
+      padding: 40px 32px;
       text-align: center;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-top: 40px;
+      box-shadow: 0 20px 60px rgba(255,121,26,0.15);
+    }
+    .regalo-tag {
+      display: inline-block;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      padding: 10px 22px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+    }
+    .regalo-texto { color: var(--texto); font-size: 1.1rem; max-width: 640px; margin: 0 auto 20px; }
+    .regalo-areas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+    .regalo-areas span {
+      background: rgba(255,121,26,0.15);
+      color: var(--naranja-claro);
+      padding: 9px 18px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+    .regalo-precio { font-weight: 800; font-size: clamp(1.05rem, 2.4vw, 1.3rem); margin-bottom: 22px; line-height: 1.35; }
+
+    /* ============ 3. PROBLEMA ============ */
+    .problema { background: var(--gris-oscuro); }
+    .problema-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+    }
+    .problema-item {
+      background: var(--card);
+      border-left: 4px solid var(--naranja);
+      border-radius: 14px;
+      padding: 26px 24px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.5;
       color: var(--blanco);
     }
-
-    .union-frase strong {
-      color: var(--naranja);
-      font-size: 1.4rem;
-      display: block;
-      margin-top: 12px;
+    .problema-cierre {
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      color: var(--naranja-claro);
     }
 
-    /* ============ PONENCIAS ============ */
+    /* ============ 4. MUCHO MÁS QUE UNA CHARLA ============ */
+    .experiencia { background: var(--negro); }
+    .experiencia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .exp-card {
+      background: var(--gris-oscuro);
+      border: 1px solid var(--linea);
+      padding: 34px 26px;
+      border-radius: 18px;
+      text-align: center;
+    }
+    .exp-card .icono { font-size: 2.4rem; margin-bottom: 14px; }
+    .exp-card h4 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--naranja-claro);
+      margin-bottom: 10px;
+    }
+    .exp-card p { color: var(--texto); font-size: 1.04rem; }
+
+    /* ============ 5 y 6. PONENTES ============ */
     .ponencia {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -318,982 +269,424 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    .ponencia.reverse {
-      direction: rtl;
-    }
-
-    .ponencia.reverse > * {
-      direction: ltr;
-    }
+    .ponencia.reverse { direction: rtl; }
+    .ponencia.reverse > * { direction: ltr; }
 
     .ponencia-foto {
       aspect-ratio: 4/5;
       background: linear-gradient(135deg, var(--naranja) 0%, var(--naranja-oscuro) 100%);
       border-radius: 24px;
       overflow: hidden;
-      position: relative;
-      box-shadow: var(--sombra-fuerte);
+      box-shadow: 0 20px 60px rgba(255,121,26,0.25);
     }
-
-    .ponencia-foto img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .ponencia-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .ponencia-foto.placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blanco);
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 24px;
-      /* TODO: sustituir el div placeholder por <img src="/fotos/asier.jpg" alt="Asier Ibarrondo"> */
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blanco); font-size: 1.2rem; font-weight: 700; text-align: center; padding: 24px;
     }
 
-    .ponencia-contenido h3 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      margin-bottom: 8px;
-      color: var(--blanco);
-    }
-
-    .ponencia-rol {
-      color: var(--gris-claro);
-      font-size: 1rem;
-      margin-bottom: 24px;
-      font-family: 'Manrope', sans-serif;
-      font-weight: 500;
-    }
-
-    .ponencia-rol a {
-      color: var(--naranja);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .ponencia-rol a:hover {
-      text-decoration: underline;
-    }
-
+    .ponencia-contenido h3 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); color: var(--blanco); margin-bottom: 6px; }
+    .ponencia-rol { color: var(--texto-suave); font-weight: 500; margin-bottom: 22px; }
+    .ponencia-rol a { color: var(--naranja); text-decoration: none; font-weight: 600; }
     .ponencia-titular {
-      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.3rem, 2.3vw, 1.7rem);
       font-style: italic;
-      color: var(--naranja);
-      margin-bottom: 28px;
-      font-family: 'Playfair Display', serif;
       font-weight: 600;
       line-height: 1.3;
+      color: var(--naranja);
       border-left: 4px solid var(--naranja);
-      padding-left: 20px;
+      padding-left: 18px;
+      margin-bottom: 22px;
     }
-
-    .ponencia-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    .ponencia-tags span {
-      background: rgba(255,121,26,0.15);
-      color: var(--naranja-claro);
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .ponencia-contenido p {
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 16px;
-      font-size: 1.05rem;
-    }
-
-    .ponencia-contenido ul {
-      list-style: none;
-      margin-top: 24px;
-    }
-
-    .ponencia-contenido ul li {
-      padding: 10px 0 10px 32px;
+    .ponencia-texto { color: var(--texto); font-size: 1.08rem; }
+    .ponencia-contenido ul { list-style: none; margin-top: 18px; }
+    .ponencia-contenido li {
       position: relative;
+      padding: 9px 0 9px 32px;
       font-weight: 500;
+      line-height: 1.5;
       color: var(--blanco);
     }
-
-    .ponencia-contenido ul li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: var(--naranja);
-      font-weight: 800;
-      font-size: 1.1rem;
+    .ponencia-contenido li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--naranja); font-weight: 800; font-size: 1.1rem;
     }
+    .ponencia-frase { margin-top: 22px; font-weight: 800; font-size: 1.1rem; line-height: 1.45; color: var(--blanco); }
 
-    /* ============ EXPERIENCIA ============ */
-    .experiencia {
-      background: var(--negro);
-    }
-
-    .experiencia-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .exp-card {
-      background: var(--gris-oscuro);
-      padding: 36px 28px;
-      border-radius: 18px;
+    /* ============ 7. UNIÓN DE LAS DOS PARTES ============ */
+    .union {
+      background: radial-gradient(ellipse at center, rgba(255,121,26,0.18) 0%, rgba(15,15,15,0) 65%), var(--negro);
       text-align: center;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      padding: calc(var(--sec-y) * 1.1) var(--sec-x);
     }
-
-    .exp-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .exp-card .icono {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-
-    .exp-card h4 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--blanco);
-    }
-
-    .exp-card p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-    }
-
-    /* ============ PARA QUIÉN ============ */
-    .para-quien {
-      background: var(--gris-oscuro);
-    }
-
-    .para-quien-lista {
-      max-width: 720px;
-      margin: 0 auto;
-      list-style: none;
-    }
-
-    .para-quien-lista li {
-      padding: 18px 24px 18px 56px;
-      position: relative;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: var(--blanco);
-    }
-
-    .para-quien-lista li::before {
-      content: '✔';
-      position: absolute;
-      left: 20px;
-      top: 18px;
-      color: var(--naranja);
-      font-weight: 800;
-      font-size: 1.2rem;
-    }
-
-    .para-quien-lista li:last-child {
-      border-bottom: none;
-    }
-
-    /* ============ ENTRADAS ============ */
-    .entradas {
-      background: linear-gradient(180deg, var(--negro) 0%, var(--gris-oscuro) 100%);
-    }
-
-    .entradas-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .entrada-card {
-      background: #2A2A2A;
-      border-radius: 24px;
-      padding: 48px 36px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .entrada-card.destacada {
-      border-color: var(--naranja);
-      transform: scale(1.02);
-    }
-
-    .entrada-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .entrada-card.destacada:hover {
-      transform: scale(1.02) translateY(-4px);
-    }
-
-    .entrada-badge {
-      display: inline-block;
-      background: var(--naranja);
-      color: var(--blanco);
-      padding: 4px 14px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    .union h2 {
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
       text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .entrada-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-      font-family: 'Manrope', sans-serif;
-      font-weight: 800;
-      color: var(--blanco);
-    }
-
-    .entrada-precio {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--naranja);
-      margin: 16px 0 24px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .entrada-precio small {
-      font-size: 1rem;
-      color: var(--gris-claro);
-      font-weight: 400;
-      font-family: 'Manrope', sans-serif;
-    }
-
-    .entrada-incluye {
-      list-style: none;
-      margin: 0 0 32px;
-      flex-grow: 1;
-    }
-
-    .entrada-incluye li {
-      padding: 8px 0 8px 28px;
-      position: relative;
-      color: rgba(255,255,255,0.75);
-    }
-
-    .entrada-incluye li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: var(--naranja);
-      font-weight: 800;
-    }
-
-    .btn-entrada {
-      display: block;
-      width: 100%;
-      padding: 16px 24px;
-      background: var(--naranja);
-      color: var(--blanco);
-      text-align: center;
-      text-decoration: none;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      letter-spacing: 0.3px;
-    }
-
-    .btn-entrada:hover {
-      background: var(--naranja-oscuro);
-      transform: translateY(-2px);
-    }
-
-    .btn-entrada.secundario {
-      background: var(--negro);
-    }
-
-    .btn-entrada.secundario:hover {
-      background: var(--gris-oscuro);
-    }
-
-    .btn-entrada:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    /* ============ FORMULARIO MODAL ============ */
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15,15,15,0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 24px;
-    }
-
-    .modal-overlay.activo {
-      display: flex;
-    }
-
-    .modal {
-      background: var(--gris-oscuro);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-
-    .modal-cerrar {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--gris);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-cerrar:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .modal h3 {
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-      color: var(--blanco);
-    }
-
-    .modal-subtitulo {
-      color: rgba(255,255,255,0.7);
+      line-height: 1.1;
       margin-bottom: 28px;
-      font-size: 0.95rem;
     }
-
-    .form-grupo {
-      margin-bottom: 18px;
-    }
-
-    .form-grupo label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--blanco);
-    }
-
-    .form-grupo input {
-      width: 100%;
-      padding: 14px 16px;
-      background: var(--negro);
-      color: var(--blanco);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-
-    .form-grupo input:focus {
-      outline: none;
-      border-color: var(--naranja);
-    }
-
-    .form-mensaje {
-      padding: 14px;
-      border-radius: 12px;
-      margin-top: 16px;
-      font-size: 0.95rem;
-      display: none;
-    }
-
-    .form-mensaje.exito {
-      background: #E8F5E9;
-      color: #2E7D32;
-      border-left: 4px solid #2E7D32;
-      display: block;
-    }
-
-    .form-mensaje.error {
-      background: #FFEBEE;
-      color: #C62828;
-      border-left: 4px solid #C62828;
-      display: block;
-    }
-
-    /* ============ PRUEBA SOCIAL ============ */
-    .prueba-social {
-      background: var(--blanco);
-    }
-
-    .prueba-social-texto {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: var(--gris);
-    }
-
-    .prueba-social-texto strong {
-      color: var(--naranja);
-    }
-
-    .fotos-evento {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .foto-evento {
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--crema) 0%, #FFE4D1 100%);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--naranja);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 16px;
-      /* TODO: sustituir por <img src="/fotos/evento1-N.jpg" alt="Primer evento Club Élite"> */
-    }
-
-    /* ============ CITA POTENTE ============ */
-    .cita-bloque {
-      background: var(--negro);
-      color: var(--blanco);
-      padding: 100px 24px;
-      text-align: center;
-    }
-
-    .cita-bloque blockquote {
-      font-family: 'Playfair Display', serif;
+    .union h2 span { display: block; color: var(--naranja); }
+    .union blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
       font-weight: 600;
-      line-height: 1.3;
-      max-width: 1000px;
-      margin: 0 auto 40px;
-      color: var(--blanco);
-    }
-
-    .cita-bloque blockquote::before {
-      content: '"';
-      display: block;
-      font-size: 5rem;
-      color: var(--naranja);
-      line-height: 0.5;
-      margin-bottom: 24px;
-    }
-
-    .cita-bloque ul {
-      list-style: none;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .cita-bloque li {
-      padding: 12px 0 12px 36px;
-      position: relative;
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .cita-bloque li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--naranja);
-      font-weight: 800;
-    }
-
-    /* ============ CTA FINAL ============ */
-    .cta-final {
-      background: linear-gradient(135deg, var(--naranja) 0%, var(--naranja-oscuro) 100%);
-      color: var(--blanco);
-      text-align: center;
-      padding: 100px 24px;
-    }
-
-    .cta-final h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 24px;
+      font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+      line-height: 1.4;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 38px;
     }
 
-    .cta-final h2 em {
-      font-style: italic;
-      color: #FFFFFF;
-      display: block;
-      margin-top: 12px;
-    }
-
-    .cta-final .cta-principal {
-      margin-top: 24px;
-    }
-
-    .cta-final .aforo {
-      margin-top: 28px;
-      opacity: 0.9;
-      font-size: 0.95rem;
-    }
-
-    /* ============ FOOTER ============ */
-    footer {
-      background: var(--gris-oscuro);
-      color: rgba(255,255,255,0.7);
-      padding: 60px 24px 30px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .footer-logos {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer-logos .logo-box {
-      background: var(--blanco);
-      padding: 12px 20px;
-    }
-
-    .footer-col h5 {
-      color: var(--blanco);
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .footer-col a, .footer-col p {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-    }
-
-    .footer-col a:hover {
-      color: var(--naranja-claro);
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.85rem;
-    }
-
-    .footer-lmnhl {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-lmnhl a {
-      color: var(--naranja-claro);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* ============ RESPONSIVE ============ */
-    @media (max-width: 880px) {
-      section { padding: 64px 20px; }
-      .hero { padding: 70px 20px 60px; }
-      .ponencia {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .ponencia.reverse {
-        direction: ltr;
-      }
-      .entradas-grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-      }
-      .entrada-card.destacada {
-        transform: none;
-      }
-      .footer-inner {
-        grid-template-columns: 1fr;
-      }
-      .hero-datos {
-        gap: 12px;
-      }
-      .hero-datos span {
-        font-size: 0.95rem;
-        padding: 10px 18px;
-      }
-      .modal {
-        padding: 28px 24px;
-      }
-    }
-
-    /* Animaciones suaves */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-inner > * {
-      animation: fadeUp 0.8s ease-out backwards;
-    }
-
-    .hero-logos { animation-delay: 0.1s; }
-    .hero h1 { animation-delay: 0.2s; }
-    .hero-sub { animation-delay: 0.3s; }
-    .hero-datos { animation-delay: 0.4s; }
-    .cta-principal { animation-delay: 0.5s; }
-
-    /* ============ CARRUSEL FOTOS EVENTO ============ */
-    .carrusel-wrapper {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    /* ============ 8. ESTO ES CLUB ÉLITE (carrusel) ============ */
+    .fotos { background: var(--gris-oscuro); }
+    .fotos-intro { text-align: center; color: var(--texto-suave); margin: -24px auto 32px; }
+    .carrusel-wrapper { position: relative; max-width: 1200px; margin: 0 auto; }
     .carrusel-track {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
+      display: flex; gap: 16px;
+      overflow-x: auto; overflow-y: hidden;
+      scroll-snap-type: x mandatory; scroll-behavior: smooth;
       padding: 8px 4px 24px;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: var(--naranja) transparent;
+      scrollbar-width: thin; scrollbar-color: var(--naranja) transparent;
     }
-
-    .carrusel-track::-webkit-scrollbar {
-      height: 8px;
-    }
-    .carrusel-track::-webkit-scrollbar-track {
-      background: rgba(0,0,0,0.05);
-      border-radius: 4px;
-    }
-    .carrusel-track::-webkit-scrollbar-thumb {
-      background: var(--naranja);
-      border-radius: 4px;
-    }
-
+    .carrusel-track::-webkit-scrollbar { height: 8px; }
+    .carrusel-track::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); border-radius: 4px; }
+    .carrusel-track::-webkit-scrollbar-thumb { background: var(--naranja); border-radius: 4px; }
     .carrusel-slide {
-      flex: 0 0 auto;
-      width: 320px;
-      aspect-ratio: 4/3;
+      flex: 0 0 auto; width: 340px; aspect-ratio: 4/3;
       scroll-snap-align: start;
-      border-radius: 14px;
-      overflow: hidden;
-      cursor: zoom-in;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      background: #EEE;
+      border-radius: 14px; overflow: hidden; cursor: zoom-in;
+      background: var(--card);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-
-    .carrusel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .carrusel-slide:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(247,98,5,0.25);
-    }
-    .carrusel-slide:hover img {
-      transform: scale(1.05);
-    }
-
+    .carrusel-slide:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+    .carrusel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .carrusel-slide:hover img { transform: scale(1.05); }
     .carrusel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--naranja);
-      color: white;
-      border: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      z-index: 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--naranja); color: #fff; border: none;
+      font-size: 1.5rem; font-weight: 800; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4); z-index: 5;
+      display: flex; align-items: center; justify-content: center;
     }
-    .carrusel-btn:hover {
-      background: var(--naranja-oscuro);
-      transform: translateY(-50%) scale(1.1);
-    }
+    .carrusel-btn:hover { background: var(--naranja-oscuro); }
     .carrusel-btn.prev { left: -8px; }
     .carrusel-btn.next { right: -8px; }
 
-    @media (max-width: 720px) {
-      .carrusel-slide { width: 260px; }
-      .carrusel-btn { display: none; }
-    }
-
-    /* ============ LIGHTBOX ============ */
     .lightbox {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.92);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 40px;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.94);
+      display: none; align-items: center; justify-content: center;
+      z-index: 2000; padding: 40px;
     }
-
-    .lightbox.active {
-      display: flex;
+    .lightbox.active { display: flex; }
+    .lightbox-img { max-width: 92vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close, .lightbox-prev, .lightbox-next {
+      position: absolute; background: rgba(255,255,255,0.12); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .lightbox-img {
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-    }
-
-    .lightbox-close,
-    .lightbox-prev,
-    .lightbox-next {
-      position: absolute;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.25);
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-close {
-      top: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-    }
-
-    .lightbox-prev,
-    .lightbox-next {
-      top: 50%;
-      transform: translateY(-50%);
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      font-size: 2rem;
-      font-weight: 300;
-    }
+    .lightbox-close { top: 20px; right: 20px; width: 52px; height: 52px; border-radius: 50%; font-size: 1.6rem; }
+    .lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 50%; font-size: 2rem; }
     .lightbox-prev { left: 24px; }
     .lightbox-next { right: 24px; }
+    .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { background: var(--naranja); border-color: var(--naranja); }
+    .lightbox-counter { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: var(--texto-suave); font-weight: 600; }
 
-    .lightbox-close:hover,
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-      background: var(--naranja);
-      border-color: var(--naranja);
+    /* ============ 9. PARA TI SI… ============ */
+    .para-quien { background: var(--negro); }
+    .para-quien-lista { max-width: 760px; margin: 0 auto; list-style: none; }
+    .para-quien-lista li {
+      position: relative;
+      padding: 18px 20px 18px 56px;
+      font-size: 1.12rem; font-weight: 500; line-height: 1.5;
+      border-bottom: 1px solid var(--linea);
     }
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .lightbox-counter {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+    .para-quien-lista li:last-child { border-bottom: none; }
+    .para-quien-lista li::before {
+      content: '✓'; position: absolute; left: 20px; top: 17px;
+      color: var(--naranja); font-weight: 800; font-size: 1.25rem;
     }
 
+    /* ============ 10. COMPRA · 39 € ============ */
+    .entradas { background: linear-gradient(180deg, var(--negro) 0%, var(--gris-oscuro) 100%); }
+    .entrada-card {
+      max-width: 540px; margin: 0 auto;
+      background: var(--card);
+      border: 2px solid var(--naranja);
+      border-radius: 24px;
+      padding: 44px 34px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(255,121,26,0.18);
+    }
+    .entrada-card h3 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.45rem; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.25; }
+    .entrada-precio {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(3.6rem, 11vw, 5rem);
+      line-height: 1;
+      color: var(--naranja);
+      margin: 18px 0 26px;
+    }
+    .entrada-incluye-titulo { font-weight: 800; letter-spacing: 0.08em; text-align: left; color: var(--texto-suave); margin-bottom: 6px; }
+    .entrada-incluye { list-style: none; text-align: left; margin-bottom: 26px; }
+    .entrada-incluye li { position: relative; padding: 9px 0 9px 30px; color: var(--blanco); line-height: 1.45; }
+    .entrada-incluye li::before { content: '✓'; position: absolute; left: 0; color: var(--naranja); font-weight: 800; }
+    .entrada-regalo {
+      background: rgba(255,121,26,0.14);
+      border: 2px dashed var(--naranja);
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin-bottom: 24px;
+    }
+    .entrada-regalo strong { display: block; color: var(--naranja-claro); font-size: 1.08rem; line-height: 1.35; margin-bottom: 8px; }
+    .entrada-regalo p { color: var(--texto); font-size: 1rem; margin: 0; }
+    .entrada-fecha { font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+    .entrada-card .btn-reserva { display: block; width: 100%; padding-left: 16px; padding-right: 16px; }
+
+    /* ============ 11. AGENDA ============ */
+    .agenda { background: var(--gris-oscuro); }
+    .agenda-tabla { max-width: 760px; margin: 0 auto; background: var(--card); border-radius: 18px; overflow: hidden; }
+    .agenda-fila {
+      display: grid; grid-template-columns: 170px 1fr; gap: 16px; align-items: baseline;
+      padding: 20px 26px; border-bottom: 1px solid var(--linea); font-size: 1.1rem; line-height: 1.45;
+    }
+    .agenda-fila:last-child { border-bottom: none; }
+    .agenda-hora { color: var(--naranja); font-weight: 800; white-space: nowrap; }
+    .agenda-txt { color: var(--blanco); }
+
+    /* ============ 12. PREGUNTAS FRECUENTES ============ */
+    .faq { background: var(--negro); }
+    .faq-lista { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq details { background: var(--gris-oscuro); border: 1px solid var(--linea); border-radius: 14px; }
+    .faq summary {
+      cursor: pointer; list-style: none; position: relative;
+      padding: 20px 56px 20px 22px;
+      font-weight: 700; font-size: 1.1rem; line-height: 1.4;
+      border-radius: 14px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+    .faq summary::after {
+      content: '+'; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+      font-size: 1.7rem; font-weight: 400; color: var(--naranja); line-height: 1;
+    }
+    .faq details[open] summary::after { content: '–'; }
+    .faq details p { padding: 0 22px 22px; color: var(--texto); font-size: 1.05rem; }
+
+    /* ============ 13. UBICACIÓN + CIERRE ============ */
+    .lugar { background: var(--gris-oscuro); text-align: center; }
+    .lugar-intro { max-width: 720px; margin: -12px auto 32px; color: var(--texto); font-size: 1.1rem; }
+    .lugar-hotel { font-size: 1.2rem; font-weight: 800; }
+    .lugar-dir { color: var(--texto-suave); margin-top: 6px; }
+
+    .cierre {
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,121,26,0.24) 0%, rgba(15,15,15,0) 62%), var(--negro);
+      text-align: center;
+      padding: calc(var(--sec-y) * 1.1) var(--sec-x);
+    }
+    .cierre h2 {
+      font-size: clamp(1.5rem, 3.6vw, 2.6rem);
+      text-transform: uppercase;
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cierre h2 span { display: block; color: var(--naranja); margin-top: 14px; }
+    .cierre-datos { margin: 40px auto; line-height: 1.7; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; text-transform: uppercase; }
+    .cierre-datos .marca { font-family: 'Playfair Display', Georgia, serif; font-size: 1.9rem; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .cierre-datos .precio { color: var(--naranja-claro); margin-top: 10px; }
+
+    /* ============ FOOTER ============ */
+    footer { background: #161616; color: rgba(255,255,255,0.72); padding: 60px var(--sec-x) 130px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; align-items: start; }
+    .footer-col h5 { color: #fff; font-family: 'Manrope', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col a, .footer-col p { color: rgba(255,255,255,0.72); text-decoration: none; display: block; margin-bottom: 8px; font-size: 0.95rem; }
+    .footer-col a:hover { color: var(--naranja-claro); }
+    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--linea); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; }
+    .footer-bottom a { color: var(--naranja-claro); text-decoration: none; font-weight: 600; }
+
+    /* ============ BOTÓN FIJO ============ */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+      display: flex; justify-content: center;
+      padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, rgba(15,15,15,0) 0%, rgba(15,15,15,0.94) 42%);
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .sticky-cta a { pointer-events: auto; width: 100%; max-width: 440px; }
+    .sticky-cta.oculto { transform: translateY(120%); opacity: 0; }
+
+    @keyframes entrada { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+    /* ============ MÓVIL ============ */
+    @media (min-width: 881px) {
+      .hero { padding-top: 52px; padding-bottom: 60px; }
+      .hero-logos { margin-bottom: 26px; }
+      .hero h1 { font-size: clamp(2.6rem, 4.3vw, 3.5rem); margin-bottom: 20px; }
+      .hero-sub { margin-bottom: 14px; }
+      .hero-temas { margin-top: 20px; }
+      .hero-datos { margin: 24px 0 26px; }
+      .hero-nota { margin-top: 16px; }
+    }
+    @media (max-width: 880px) {
+      .ponencia { grid-template-columns: 1fr; gap: 32px; }
+      .ponencia.reverse { direction: ltr; }
+      .ponencia-foto { max-width: 400px; margin: 0 auto; width: 100%; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
     @media (max-width: 720px) {
-      .lightbox-prev,
-      .lightbox-next {
-        width: 44px;
-        height: 44px;
-        font-size: 1.5rem;
-      }
-      .lightbox-prev { left: 12px; }
-      .lightbox-next { right: 12px; }
-      .lightbox { padding: 20px; }
+      :root { --sec-y: 60px; --sec-x: 20px; }
+      body { font-size: 1.0625rem; }
+      .hero { padding: 40px var(--sec-x) 48px; }
+      .hero-logos { margin-bottom: 22px; }
+      .hero h1 { margin-bottom: 20px; }
+      .hero-sub { margin-bottom: 14px; }
+      .hero-temas { margin-top: 20px; }
+      .hero-datos { margin: 24px 0 28px; }
+      .hero-datos { gap: 10px; }
+      .hero-datos span { padding: 11px 18px; }
+      .btn-reserva, .btn-reserva.grande { display: block; width: 100%; max-width: 440px; margin: 0 auto; padding: 20px 16px; font-size: 1.1rem; }
+      .regalo-card { padding: 32px 20px; }
+      .problema-grid { grid-template-columns: 1fr; gap: 14px; }
+      .experiencia-grid { gap: 14px; }
+      .exp-card { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: start; text-align: left; padding: 22px 20px; }
+      .exp-card .icono { grid-row: 1 / span 2; font-size: 2rem; margin: 2px 0 0; }
+      .exp-card h4 { margin-bottom: 4px; }
+      .carrusel-slide { width: 270px; }
+      .carrusel-btn { display: none; }
+      .lightbox { padding: 16px; }
+      .lightbox-prev, .lightbox-next { width: 46px; height: 46px; font-size: 1.6rem; }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
+      .agenda-fila { grid-template-columns: 1fr; gap: 4px; padding: 18px 20px; }
+      .agenda-hora { font-size: 1.15rem; }
+      .entrada-card { padding: 34px 22px; }
+      .faq summary { padding: 18px 50px 18px 18px; }
+      .cierre-datos .marca { font-size: 1.7rem; }
     }
-
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-inner { animation: none; }
+      .sticky-cta, .btn-reserva, .carrusel-slide img { transition: none; }
+      .carrusel-track { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
-<!-- ============ HERO ============ -->
+
+  <!-- ============ 1. HERO ============ -->
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-logos">
         <div class="logo-box">
-          <!-- Logo Bilboinform: ajustar ruta si está en otra carpeta -->
           <img src="/fotos/logo-bilboinform.webp" alt="Bilboinform Asesores" onerror="this.outerHTML='<span style=&quot;color:#FF791A;font-weight:800;font-size:18px&quot;>BILBOINFORM</span>'">
         </div>
       </div>
 
-      <p class="hero-eyebrow" style="display:inline-block;text-transform:uppercase;letter-spacing:0.08em;font-size:0.85rem;color:#FFFFFF;font-weight:700;margin-bottom:32px;background:rgba(0,0,0,0.2);padding:8px 18px;border-radius:100px;backdrop-filter:blur(8px);">Evento presencial para empresarios y empresarias de Bizkaia · 1 de octubre · Hotel Spirit Gran Bilbao</p>
-
       <h1>Tu empresa factura.<br><em>Pero ¿sabes dónde está realmente tu dinero?</em></h1>
 
-      <p class="hero-sub">
-        Tienes clientes. Entran ventas. Pagas nóminas, proveedores e impuestos.
-      </p>
+      <p class="hero-sub">Tienes clientes, facturas y pagas nóminas, proveedores e impuestos. Pero cuando termina el mes, ¿sabes realmente cuánto dinero genera tu empresa, cuánto puedes utilizar y qué deberías reservar?</p>
+      <p class="hero-sub destacado">Este jueves, descubre qué mirar para dejar de dirigir tu empresa a ciegas.</p>
 
-      <p class="hero-sub" style="margin-top: 20px;">
-        Pero llega final de mes, miras la cuenta bancaria y vuelves a hacerte la misma pregunta:
-        <strong>👉 "Con todo lo que hemos facturado… ¿dónde está mi dinero?"</strong>
-      </p>
-
-      <p class="hero-sub" style="margin-top: 20px;">
-        Club Élite es un encuentro presencial para empresarios que quieren entender mejor qué está pasando dentro de su empresa y tomar decisiones con más información, control y criterio.
-      </p>
+      <p class="hero-temas">Control financiero<b>·</b>Marketing e inversión<b>·</b>Ejercicio práctico<b>·</b>Networking + cóctel</p>
 
       <div class="hero-datos">
-        <span>📅 Jueves 1 de octubre</span>
-        <span>🕔 16:45 h</span>
-        <span>📍 Hotel Spirit Gran Bilbao</span>
+        <span>1 octubre</span>
+        <span>16:45 h</span>
+        <span>Spirit Hotel Gran Bilbao</span>
       </div>
 
-      <a href="#entradas" class="cta-principal">👉 RESERVA TU PLAZA</a>
-
-      <div class="hero-precios">
-        <span>💶 Entrada: 39€</span>
-      </div>
+      <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva cta-observe" target="_blank" rel="noopener">Reservar mi plaza — 39 €</a>
+      <p class="hero-nota">Evento presencial para empresarios y empresarias de Bizkaia.</p>
     </div>
   </header>
 
-  <!-- ============ ENFOQUE DEL EVENTO ============ -->
-  <section class="porque">
-    <div class="container">
-      <h2 class="section-titulo">Tu empresa puede funcionar y, aun así, haber cosas importantes que <em>no estás viendo.</em></h2>
-      <div class="porque-grid">
-        <p class="porque-texto">
-          Puedes facturar todos los meses y no tener claro dónde está realmente el dinero.
-        </p>
-        <p class="porque-texto">
-          Puedes invertir en publicidad y no tener claro si esa inversión está llegando al cliente adecuado o simplemente consumiendo presupuesto.
-        </p>
-        <p class="porque-texto">
-          Y puedes acabar tomando decisiones importantes basándote más en la intuición que en información clara.
-        </p>
+  <!-- ============ 2. REGALO INCLUIDO CON LA ENTRADA ============ -->
+  <section class="regalo">
+    <div class="regalo-card">
+      <p class="regalo-tag">🎁 REGALO INCLUIDO CON TU ENTRADA</p>
+      <p class="regalo-texto">Al reservar tu plaza para Club Élite recibirás también acceso al Radar “¿Dónde está mi dinero?”, una herramienta de diagnóstico empresarial para analizar 4 áreas clave de tu negocio:</p>
+      <div class="regalo-areas">
+        <span>Rentabilidad</span><span>Tesorería</span><span>Fiscalidad</span><span>Seguridad financiera</span>
+      </div>
+      <p class="regalo-precio">ENTRADA CLUB ÉLITE + ACCESO AL RADAR — 39 €</p>
+      <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva cta-observe" target="_blank" rel="noopener">Reservar mi plaza — 39 €</a>
+    </div>
+  </section>
 
-        <div class="impacto">
-          <h3>En esta edición de Club Élite pondremos el foco en dos áreas que cualquier empresario debería entender mejor:</h3>
-          <ul>
-            <li>✔️ los números de su empresa</li>
-            <li>✔️ y la forma en la que invierte para captar nuevos clientes</li>
-          </ul>
+  <!-- ============ 3. PROBLEMA ============ -->
+  <section class="problema">
+    <div class="container">
+      <h2 class="section-titulo titulo-caps">Puedes estar facturando y seguir <em>dirigiendo a ciegas</em></h2>
+      <div class="problema-grid">
+        <p class="problema-item">Te entran ventas, pero no sabes exactamente cuánto dinero puedes utilizar.</p>
+        <p class="problema-item">Los impuestos o determinados pagos todavía pueden pillarte sin la previsión que te gustaría.</p>
+        <p class="problema-item">Quieres captar más clientes, pero no tienes claro cuánto invertir ni qué debería estar preparado antes.</p>
+        <p class="problema-item">Tomas decisiones importantes mirando el saldo del banco o confiando demasiado en la intuición.</p>
+      </div>
+      <p class="problema-cierre">Club Élite nace para poner claridad sobre estas decisiones.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. MUCHO MÁS QUE UNA CHARLA (antes de los ponentes) ============ -->
+  <section class="experiencia">
+    <div class="container">
+      <h2 class="section-titulo">Mucho más que <em>una charla.</em></h2>
+      <div class="experiencia-grid">
+        <div class="exp-card">
+          <div class="icono">📊</div>
+          <h4>Control</h4>
+          <p>Entiende mejor qué ocurre con el dinero que genera tu empresa.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🎯</div>
+          <h4>Captación</h4>
+          <p>Descubre qué debería estar preparado antes de invertir en conseguir clientes.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🧩</div>
+          <h4>Aplicación</h4>
+          <p>Trabaja sobre situaciones empresariales reales mediante ejercicios por grupos.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icono">🤝</div>
+          <h4>Conexiones</h4>
+          <p>Comparte ideas y oportunidades con otros empresarios de Bizkaia durante el networking y el cóctel.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PONENCIA 1 — SILVIA ============ -->
-  <section>
+  <!-- ============ 5. SILVIA ============ -->
+  <section style="background: var(--gris-oscuro);">
     <div class="container">
       <div class="ponencia">
         <div class="ponencia-foto">
-          <!-- Sustituir src si la foto de Silvia tiene otra ruta -->
           <img src="/fotos/silvia.jpg" alt="Silvia Ceballos, CEO de Bilboinform Asesores" style="object-position: center top;" onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='SILVIA<br>CEBALLOS'">
         </div>
         <div class="ponencia-contenido">
           <h3>Silvia Ceballos</h3>
           <p class="ponencia-rol">CEO de <a href="https://www.bilboinform.com" target="_blank" rel="noopener">Bilboinform Asesores</a></p>
-          <p class="ponencia-titular">"¿Dónde está mi dinero?"</p>
-
-          <div class="ponencia-tags">
-            <span>Tesorería</span>
-            <span>Liquidez</span>
-            <span>Previsión</span>
-            <span>Control</span>
-            <span>Toma de decisiones</span>
-          </div>
-
-          <p>Facturar no significa tener ese dinero disponible.</p>
-          <p>Puedes tener clientes, ventas y dinero en la cuenta y, aun así, no saber cuánto puedes utilizar realmente, cuánto deberías reservar o qué pagos tendrás que afrontar después.</p>
-
-          <p style="margin-top: 24px; font-weight: 600; color: var(--blanco);">En esta ponencia descubrirás:</p>
+          <p class="ponencia-titular">¿Dónde está mi dinero?</p>
+          <p class="ponencia-texto">Facturar no significa tener todo ese dinero disponible. Aprende qué deberías mirar para comprender mejor qué está ocurriendo dentro de tu empresa.</p>
           <ul>
-            <li>Por qué mirar el saldo del banco no significa entender tu empresa</li>
-            <li>Cómo saber mejor qué está pasando con el dinero que genera tu negocio</li>
-            <li>Cómo anticiparte a pagos y compromisos futuros</li>
-            <li>Cómo tomar decisiones con más información y menos intuición</li>
+            <li>Por qué el saldo bancario no explica toda la situación de tu empresa.</li>
+            <li>Cómo saber mejor qué dinero puedes utilizar y qué debes reservar.</li>
+            <li>Cómo anticiparte a pagos y compromisos.</li>
+            <li>Cómo tomar decisiones con más información y menos intuición.</li>
           </ul>
-
-          <p style="margin-top: 24px;"><strong>No necesitas convertirte en contable. Necesitas dejar de dirigir a ciegas.</strong></p>
+          <p class="ponencia-frase">No necesitas convertirte en contable. Necesitas dejar de dirigir a ciegas.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PONENCIA 2 — ÁLVARO CASADO ============ -->
-  <section style="background: var(--gris-oscuro);">
+  <!-- ============ 6. ÁLVARO ============ -->
+  <section style="background: var(--negro);">
     <div class="container">
       <div class="ponencia reverse">
         <div class="ponencia-foto">
@@ -1302,212 +695,159 @@
         <div class="ponencia-contenido">
           <h3>Álvaro Casado</h3>
           <p class="ponencia-rol">CEO de Resoluzion360 · Especialista en marketing digital y captación mediante campañas publicitarias</p>
-          <p class="ponencia-titular">"¿Estás invirtiendo en publicidad o simplemente gastando dinero?"</p>
-
-          <p>Invertir en publicidad no significa tener una estrategia de captación.</p>
-          <p>Puedes destinar presupuesto a campañas y, aun así, no tener claro si estás apareciendo ante tu cliente ideal, si tu negocio está preparado para convertir esa inversión en oportunidades o si estás perdiendo dinero por falta de estrategia y criterio.</p>
-
-          <p style="margin-top: 24px; font-weight: 600; color: var(--blanco);">En esta entrevista hablaremos de:</p>
+          <p class="ponencia-titular">¿Estás invirtiendo en publicidad o simplemente gastando dinero?</p>
+          <p class="ponencia-texto">Antes de invertir más para conseguir clientes, necesitas saber qué debería estar en orden y cómo determinar si ese dinero está generando oportunidades reales.</p>
           <ul>
-            <li>Qué debería tener claro una empresa antes de invertir dinero en publicidad</li>
-            <li>La diferencia entre lanzar anuncios y construir una estrategia de captación</li>
-            <li>Errores que hacen que una campaña consuma presupuesto sin generar oportunidades reales</li>
-            <li>Qué criterios utilizar para valorar si una estrategia, un equipo o un proveedor de publicidad tiene sentido para tu negocio</li>
-            <li>Cómo enfocar la inversión publicitaria para llegar al tipo de cliente que realmente quieres captar</li>
+            <li>Qué debería tener claro una empresa antes de invertir en publicidad.</li>
+            <li>Diferencia entre lanzar anuncios y construir una estrategia de captación.</li>
+            <li>Errores que hacen que una campaña consuma presupuesto sin generar oportunidades reales.</li>
+            <li>Cómo enfocar la inversión para llegar al cliente que realmente quieres captar.</li>
           </ul>
-
-          <p style="margin-top: 24px;"><strong>No se trata de invertir más. Se trata de saber qué tiene que estar en orden antes de poner dinero en una campaña.</strong></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CITA POTENTE ============ -->
-  <section class="cita-bloque">
+  <!-- ============ 7. DOS ÁREAS, UN MISMO RESULTADO ============ -->
+  <section class="union">
     <div class="container">
-      <blockquote>
-        El dinero que no controlas dentro de tu empresa y el que inviertes sin estrategia fuera terminan afectando al mismo sitio: <em>tus resultados.</em>
-      </blockquote>
+      <h2>Dos áreas. <span>Un mismo resultado.</span></h2>
+      <blockquote>El dinero que no controlas dentro de tu empresa y el que inviertes sin estrategia fuera terminan afectando al mismo sitio: tus resultados.</blockquote>
+      <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva cta-observe" target="_blank" rel="noopener">Reservar mi plaza — 39 €</a>
     </div>
   </section>
 
-  <!-- ============ EXPERIENCIA ============ -->
-  <section class="experiencia">
+  <!-- ============ 8. ESTO ES CLUB ÉLITE ============ -->
+  <section class="fotos">
     <div class="container">
-      <h2 class="section-titulo">Mucho más que <em>una charla.</em></h2>
-      <div class="experiencia-grid">
-        <div class="exp-card">
-          <div class="icono">🤝</div>
-          <h4>Networking real</h4>
-          <p>Conecta con empresarios, autónomos y profesionales de diferentes sectores.</p>
+      <h2 class="section-titulo titulo-caps">Esto es <em>Club Élite</em></h2>
+      <p class="fotos-intro">Toca cualquier foto para ampliarla.</p>
+      <div class="carrusel-wrapper">
+        <button class="carrusel-btn prev" onclick="scrollCarrusel(-1)" aria-label="Fotos anteriores">‹</button>
+        <div class="carrusel-track" id="carruselTrack">
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
+          <div class="carrusel-slide" role="button" tabindex="0" aria-label="Ampliar foto"><img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp" alt="Club Élite, edición anterior" loading="lazy" decoding="async"></div>
         </div>
-        <div class="exp-card">
-          <div class="icono">🚀</div>
-          <h4>Oportunidades de negocio</h4>
-          <p>Comparte ideas, crea relaciones y genera nuevas colaboraciones.</p>
-        </div>
-        <div class="exp-card">
-          <div class="icono">🍸</div>
-          <h4>Cocktail final</h4>
-          <p>Un espacio distendido para seguir conversando y creando conexiones.</p>
-        </div>
-        <div class="exp-card">
-          <div class="icono">🧠</div>
-          <h4>Contenido práctico</h4>
-          <p>Ideas reales y aplicables desde el día siguiente.</p>
-        </div>
+        <button class="carrusel-btn next" onclick="scrollCarrusel(1)" aria-label="Más fotos">›</button>
       </div>
     </div>
   </section>
 
-  <!-- ============ PARA QUIÉN ============ -->
+  <!-- ============ 9. ESTE EVENTO ES PARA TI SI… ============ -->
   <section class="para-quien">
     <div class="container">
       <h2 class="section-titulo">Este evento es <em>para ti si…</em></h2>
       <ul class="para-quien-lista">
-        <li>Tienes una empresa o eres autónomo y ya estás facturando</li>
-        <li>Ves entrar y salir dinero, pero no siempre tienes claro cuánto puedes utilizar realmente</li>
-        <li>Quieres anticiparte mejor y tomar decisiones con más información</li>
-        <li>Quieres captar nuevos clientes y entender mejor cómo enfocar una inversión en publicidad</li>
-        <li>Quieres saber qué debería estar en orden antes de destinar presupuesto a campañas</li>
-        <li>Buscas contenido práctico que puedas trasladar a tu empresa</li>
-        <li>Quieres conectar con otros empresarios y profesionales de Bizkaia</li>
+        <li>Tienes una empresa o eres autónomo y ya estás facturando.</li>
+        <li>Ves entrar y salir dinero, pero no siempre tienes claro cuánto puedes utilizar realmente.</li>
+        <li>Quieres anticiparte mejor a impuestos, pagos y decisiones.</li>
+        <li>Inviertes o quieres invertir en captar clientes y quieres hacerlo con más criterio.</li>
+        <li>Tu empresa funciona, pero demasiadas decisiones siguen dependiendo de tu intuición.</li>
+        <li>Quieres conectar con otros empresarios y profesionales de Bizkaia.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ============ ENTRADAS ============ -->
+  <!-- ============ 10. COMPRA · 39 € ============ -->
   <section class="entradas" id="entradas">
     <div class="container">
-      <h2 class="section-titulo">Reserva <em>tu plaza</em></h2>
-      <p style="text-align:center;color:rgba(255,255,255,0.65);margin-top:-16px;margin-bottom:32px;font-size:1.05rem;">1 de octubre · Hotel Spirit Gran Bilbao</p>
-      <div class="entradas-grid" style="grid-template-columns: 1fr; max-width: 460px;">
-        <div class="entrada-card destacada">
-          <span class="entrada-badge">Entrada</span>
-          <h3>Acceso al evento</h3>
-          <div class="entrada-precio">39€ <small>/ persona</small></div>
-          <ul class="entrada-incluye">
-            <li>Acceso a las dos ponencias</li>
-            <li>Ejercicios prácticos por grupos</li>
-            <li>Cóctel y networking</li>
-          </ul>
-          <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-entrada" target="_blank" rel="noopener">RESERVAR MI PLAZA</a>
+      <div class="entrada-card">
+        <h3>Tu entrada a Club Élite</h3>
+        <div class="entrada-precio">39 €</div>
+        <p class="entrada-incluye-titulo">INCLUYE:</p>
+        <ul class="entrada-incluye">
+          <li>Ponencia “¿Dónde está mi dinero?”</li>
+          <li>Entrevista sobre marketing, captación e inversión.</li>
+          <li>Ejercicio práctico empresarial por grupos.</li>
+          <li>Networking con empresarios y profesionales de Bizkaia.</li>
+          <li>Cóctel final.</li>
+        </ul>
+        <div class="entrada-regalo">
+          <strong>🎁 + ACCESO DE REGALO AL RADAR “¿DÓNDE ESTÁ MI DINERO?”</strong>
+          <p>Analiza rentabilidad, tesorería, fiscalidad y seguridad financiera de tu negocio.</p>
         </div>
+        <p class="entrada-fecha">Este jueves · 1 octubre · 16:45 h</p>
+        <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva cta-observe" target="_blank" rel="noopener">Reservar mi plaza — 39 €</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ BLOQUE 9 · TIMING ============ -->
-  <section class="timing" style="background: var(--negro); padding: 80px 20px;">
+  <!-- ============ 11. AGENDA ============ -->
+  <section class="agenda">
     <div class="container">
       <h2 class="section-titulo">Así será <em>la tarde</em></h2>
-      <div class="timing-tabla" style="max-width:720px;margin:40px auto 0;background:#1F1F1F;border-radius:16px;overflow:hidden;">
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#FF791A;font-weight:700;">16:45</span>
-          <span style="color:#F5F5F5;">Recepción y entrega de material</span>
-        </div>
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#FF791A;font-weight:700;">17:00 – 17:15</span>
-          <span style="color:#F5F5F5;">Bienvenida y presentación del evento</span>
-        </div>
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#FF791A;font-weight:700;">17:15 – 18:00</span>
-          <span style="color:#F5F5F5;">Silvia Ceballos — ¿Dónde está mi dinero?</span>
-        </div>
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#FF791A;font-weight:700;">18:00 – 19:00</span>
-          <span style="color:#F5F5F5;">Entrevista a Álvaro Casado — marketing digital, captación y publicidad</span>
-        </div>
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;border-bottom:1px solid #333;">
-          <span style="color:#FF791A;font-weight:700;">19:00 – 19:30</span>
-          <span style="color:#F5F5F5;">Ejercicios prácticos por grupos</span>
-        </div>
-        <div class="timing-row" style="display:grid;grid-template-columns:140px 1fr;padding:20px 24px;">
-          <span style="color:#FF791A;font-weight:700;">19:30 – 20:30</span>
-          <span style="color:#F5F5F5;">Cóctel y networking</span>
-        </div>
+      <div class="agenda-tabla">
+        <div class="agenda-fila"><span class="agenda-hora">16:45</span><span class="agenda-txt">Recepción y entrega de material</span></div>
+        <div class="agenda-fila"><span class="agenda-hora">17:00 – 17:15</span><span class="agenda-txt">Bienvenida y presentación del evento</span></div>
+        <div class="agenda-fila"><span class="agenda-hora">17:15 – 18:00</span><span class="agenda-txt">Silvia Ceballos — ¿Dónde está mi dinero?</span></div>
+        <div class="agenda-fila"><span class="agenda-hora">18:00 – 19:00</span><span class="agenda-txt">Entrevista a Álvaro Casado — marketing digital, captación y publicidad</span></div>
+        <div class="agenda-fila"><span class="agenda-hora">19:00 – 19:30</span><span class="agenda-txt">Ejercicios prácticos por grupos</span></div>
+        <div class="agenda-fila"><span class="agenda-hora">19:30 – 20:30</span><span class="agenda-txt">Cóctel y networking</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ BLOQUE 10 · LUGAR DEL EVENTO ============ -->
-  <section class="lugar" style="padding: 80px 20px;">
+  <!-- ============ 12. PREGUNTAS FRECUENTES ============ -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-titulo">Preguntas <em>frecuentes</em></h2>
+      <div class="faq-lista">
+        <details>
+          <summary>¿Necesito conocimientos financieros?</summary>
+          <p>No. El contenido está pensado para empresarios, no para contables.</p>
+        </details>
+        <details>
+          <summary>¿Es solo una jornada sobre fiscalidad?</summary>
+          <p>No. Trabajaremos el control del dinero dentro de la empresa y también cómo tomar mejores decisiones al invertir en marketing y captación.</p>
+        </details>
+        <details>
+          <summary>¿Habrá networking?</summary>
+          <p>Sí. La última parte del encuentro está dedicada al cóctel y networking con otros empresarios y profesionales.</p>
+        </details>
+        <details>
+          <summary>¿Para quién está pensado?</summary>
+          <p>Principalmente para empresarios, autónomos y responsables de negocios que ya están facturando.</p>
+        </details>
+        <details>
+          <summary>¿Qué recibo con mi entrada?</summary>
+          <p>Acceso al evento completo, las dos intervenciones, ejercicio práctico, networking, cóctel y acceso de regalo al Radar “¿Dónde está mi dinero?”.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13. UBICACIÓN ============ -->
+  <section class="lugar">
     <div class="container">
       <h2 class="section-titulo">Nos vemos en el <em>Spirit Hotel Gran Bilbao</em></h2>
-      <p style="text-align:center;max-width:720px;margin:0 auto 40px;color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.6;">
-        El próximo <strong>1 de octubre</strong>, Club Élite reunirá aquí a empresarios y empresarias de Bizkaia para compartir una tarde de contenido práctico, conversaciones reales y nuevas conexiones.
-      </p>
-      <div class="lugar-datos" style="text-align:center;margin-bottom:40px;">
-        <p style="font-size:1.15rem;font-weight:700;color:var(--blanco);margin:0;">Spirit Hotel Gran Bilbao</p>
-        <p style="color:rgba(255,255,255,0.65);margin:8px 0 0;">Prieto Indalecio Hiribidea, 1 · 48004 Bilbao, Bizkaia</p>
-      </div>
+      <p class="lugar-intro">El próximo <strong>1 de octubre</strong>, Club Élite reunirá aquí a empresarios y empresarias de Bizkaia para compartir una tarde de contenido práctico, conversaciones reales y nuevas conexiones.</p>
+      <p class="lugar-hotel">Spirit Hotel Gran Bilbao</p>
+      <p class="lugar-dir">Prieto Indalecio Hiribidea, 1 · 48004 Bilbao, Bizkaia</p>
     </div>
   </section>
 
-  <!-- ============ BLOQUE 11 · ASÍ SE VIVE CLUB ÉLITE ============ -->
-  <section class="prueba-social" style="background: var(--gris-oscuro); padding: 80px 20px;">
+  <!-- ============ 13. CIERRE FINAL ============ -->
+  <section class="cierre">
     <div class="container">
-      <h2 class="section-titulo">Así se vive <em>Club Élite</em></h2>
-      <p style="text-align:center;max-width:640px;margin:0 auto 40px;color:rgba(255,255,255,0.7);">
-        Una selección de fotografías de ediciones anteriores para que veas el ambiente y la experiencia del evento.
-      </p>
-      <div class="carrusel-wrapper">
-        <button class="carrusel-btn prev" onclick="scrollCarrusel(-1)" aria-label="Anterior">‹</button>
-        <div class="carrusel-track" id="carruselTrack">
-        <div class="carrusel-slide" onclick="abrirLightbox(0)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(1)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(2)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(3)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(4)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(5)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(6)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(7)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(8)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(9)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(10)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(11)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        <div class="carrusel-slide" onclick="abrirLightbox(12)">
-          <img src="/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp" alt="Club Élite — edición anterior" loading="lazy">
-        </div>
-        </div>
-        <button class="carrusel-btn next" onclick="scrollCarrusel(1)" aria-label="Siguiente">›</button>
+      <h2>El próximo jueves puedes seguir haciéndote la misma pregunta… <span>…o empezar a entender dónde está tu dinero.</span></h2>
+      <div class="cierre-datos">
+        <div class="marca">Club Élite</div>
+        <div>1 octubre · 16:45 h</div>
+        <div>Spirit Hotel Gran Bilbao</div>
+        <div class="precio">Entrada + Radar de regalo: 39 €</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA FINAL ============ -->
-  <section class="cta-final">
-    <div class="container">
-      <h2>Tu empresa factura.<br><em>Ahora toca entender mejor dónde está tu dinero y cómo invertirlo para crecer.</em></h2>
-      <p style="max-width:640px;margin:20px auto 32px;color:#FFFFFF;font-size:1.05rem;line-height:1.6;font-weight:500;">
-        Deja de dirigir únicamente por intuición y empieza a tomar decisiones con más información, control y criterio.
-      </p>
-      <a href="#entradas" class="cta-principal">👉 QUIERO MI PLAZA</a>
-      <p class="aforo">Aforo limitado</p>
+      <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva grande cta-observe" target="_blank" rel="noopener">Reservar mi plaza — 39 €</a>
     </div>
   </section>
 
@@ -1515,13 +855,11 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <div class="footer-logos">
-          <div class="logo-box">
-            <img src="/fotos/logo-bilboinform.webp" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#FF791A;font-weight:800&quot;>BILBOINFORM</span>'">
-          </div>
+        <div class="logo-box">
+          <img src="/fotos/logo-bilboinform.webp" alt="Bilboinform" onerror="this.outerHTML='<span style=&quot;color:#FF791A;font-weight:800&quot;>BILBOINFORM</span>'">
         </div>
-        <p style="margin-top: 20px; font-size: 0.9rem;">Club Élite Bilboinform · 3.er Evento<br>1 de octubre de 2026 · Hotel Spirit Gran Bilbao</p>
-        <p style="margin-top: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55);">Con la colaboración de <strong style="color: var(--naranja-claro); font-weight: 700;">Resoluzion360</strong> · Álvaro Casado</p>
+        <p style="margin-top: 20px; font-size: 0.95rem;">Club Élite Bilboinform · 3.er Evento<br>1 de octubre de 2026 · Spirit Hotel Gran Bilbao</p>
+        <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.55);">Con la colaboración de <strong style="color: var(--naranja-claro); font-weight: 700;">Resoluzion360</strong> · Álvaro Casado</p>
       </div>
       <div class="footer-col">
         <h5>Contacto</h5>
@@ -1538,169 +876,102 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Club Élite Bilboinform. Todos los derechos reservados.</span>
-      <span class="footer-lmnhl">Web por <a href="https://www.losmartesnohayluna.com" target="_blank" rel="noopener">Los Martes No Hay Luna</a></span>
+      <span>Web por <a href="https://www.losmartesnohayluna.com" target="_blank" rel="noopener">Los Martes No Hay Luna</a></span>
     </div>
   </footer>
 
-  <!-- ============ MODAL FORMULARIO GRATIS ============ -->
-  <div class="modal-overlay" id="modalGratis">
-    <div class="modal">
-      <button class="modal-cerrar" onclick="cerrarModal()" aria-label="Cerrar">×</button>
-      <h3>Reserva tu plaza gratuita</h3>
-      <p class="modal-subtitulo">Para clientes de Bilboinform Asesores y CDC DATA Comunicación.</p>
-
-      <form id="formGratis" onsubmit="enviarFormulario(event)">
-        <div class="form-grupo">
-          <label for="nombre">Nombre completo *</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-grupo">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-grupo">
-          <label for="telefono">Teléfono *</label>
-          <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-        </div>
-        <div class="form-grupo">
-          <label for="empresa">Empresa *</label>
-          <input type="text" id="empresa" name="empresa" required>
-        </div>
-        <button type="submit" class="btn-entrada" id="btnEnviar">CONFIRMAR PLAZA</button>
-        <div class="form-mensaje" id="formMensaje"></div>
-      </form>
-    </div>
+  <!-- ============ BOTÓN FIJO DE RESERVA ============ -->
+  <div class="sticky-cta oculto" id="stickyCta">
+    <a href="https://buy.stripe.com/eVq5kD5DgdSt7bU4kl8N203" class="btn-reserva" target="_blank" rel="noopener">Reservar · 39 €</a>
   </div>
 
-  <script>
-    function abrirModal(tipo) {
-      document.getElementById('modalGratis').classList.add('activo');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function cerrarModal() {
-      document.getElementById('modalGratis').classList.remove('activo');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('modalGratis').addEventListener('click', function(e) {
-      if (e.target === this) cerrarModal();
-    });
-
-    async function enviarFormulario(e) {
-      e.preventDefault();
-      const btn = document.getElementById('btnEnviar');
-      const mensaje = document.getElementById('formMensaje');
-      btn.disabled = true;
-      btn.textContent = 'Enviando…';
-      mensaje.className = 'form-mensaje';
-      mensaje.textContent = '';
-
-      const datos = {
-        nombre: document.getElementById('nombre').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        telefono: document.getElementById('telefono').value.trim(),
-        empresa: document.getElementById('empresa').value.trim()
-      };
-
-      try {
-        const res = await fetch('/api/subscribe-junio', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(datos)
-        });
-        const data = await res.json();
-
-        if (res.ok) {
-          mensaje.classList.add('exito');
-          mensaje.textContent = '✔ ¡Plaza confirmada! Recibirás un email con los detalles del evento.';
-          document.getElementById('formGratis').reset();
-          setTimeout(() => {
-            cerrarModal();
-            btn.disabled = false;
-            btn.textContent = 'CONFIRMAR PLAZA';
-            mensaje.className = 'form-mensaje';
-          }, 3500);
-        } else {
-          throw new Error(data.error || 'Algo ha fallado');
-        }
-      } catch (err) {
-        mensaje.classList.add('error');
-        mensaje.textContent = '✖ ' + (err.message || 'No hemos podido procesar tu reserva. Inténtalo de nuevo.');
-        btn.disabled = false;
-        btn.textContent = 'CONFIRMAR PLAZA';
-      }
-    }
-  </script>
-
-  <!-- ============ LIGHTBOX GALERÍA ============ -->
-  <div class="lightbox" id="lightbox" onclick="cerrarLightboxSiFuera(event)">
-    <button class="lightbox-close" onclick="cerrarLightbox()" aria-label="Cerrar">×</button>
-    <button class="lightbox-prev" onclick="navLightbox(-1)" aria-label="Anterior">‹</button>
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de fotos">
+    <button class="lightbox-close" id="lbCerrar" aria-label="Cerrar">×</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="Foto anterior">‹</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="">
-    <button class="lightbox-next" onclick="navLightbox(1)" aria-label="Siguiente">›</button>
+    <button class="lightbox-next" id="lbNext" aria-label="Foto siguiente">›</button>
     <div class="lightbox-counter" id="lightboxCounter"></div>
   </div>
 
   <script>
-    // === Carrusel ===
-    function scrollCarrusel(dir) {
-      const track = document.getElementById('carruselTrack');
-      const slideWidth = track.querySelector('.carrusel-slide').offsetWidth + 16;
-      track.scrollBy({ left: slideWidth * dir * 2, behavior: 'smooth' });
-    }
+    (function () {
+      // ---------- Carrusel ----------
+      var track = document.getElementById('carruselTrack');
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.carrusel-slide'));
+      var fotos = slides.map(function (s) { return s.querySelector('img').getAttribute('src'); });
 
-    // === Lightbox ===
-    const fotosLightbox = [
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.01%20%281%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%281%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%282%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%283%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%284%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%285%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%286%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%287%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%288%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%289%29.webp',
-      '/fotos/WhatsApp%20Image%202026-08-19%20at%2017.23.02%20%2810%29.webp'
-    ];
-    let lightboxIndex = 0;
+      window.scrollCarrusel = function (dir) {
+        var w = slides[0].offsetWidth + 16;
+        track.scrollBy({ left: w * dir * 2, behavior: 'smooth' });
+      };
 
-    function abrirLightbox(index) {
-      lightboxIndex = index;
-      actualizarLightbox();
-      document.getElementById('lightbox').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+      // ---------- Lightbox ----------
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightboxImg');
+      var lbCount = document.getElementById('lightboxCounter');
+      var idx = 0;
 
-    function cerrarLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-      document.body.style.overflow = '';
-    }
+      function pintar() {
+        lbImg.src = fotos[idx];
+        lbCount.textContent = (idx + 1) + ' / ' + fotos.length;
+      }
+      function abrir(i) {
+        idx = i; pintar();
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function cerrar() {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      function nav(d) {
+        idx = (idx + d + fotos.length) % fotos.length;
+        pintar();
+      }
 
-    function cerrarLightboxSiFuera(e) {
-      if (e.target.id === 'lightbox') cerrarLightbox();
-    }
+      slides.forEach(function (s, i) {
+        s.addEventListener('click', function () { abrir(i); });
+        s.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(i); }
+        });
+      });
+      document.getElementById('lbCerrar').addEventListener('click', cerrar);
+      document.getElementById('lbPrev').addEventListener('click', function () { nav(-1); });
+      document.getElementById('lbNext').addEventListener('click', function () { nav(1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) cerrar(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('active')) return;
+        if (e.key === 'Escape') cerrar();
+        if (e.key === 'ArrowLeft') nav(-1);
+        if (e.key === 'ArrowRight') nav(1);
+      });
+      // Deslizar con el dedo en móvil
+      var x0 = null;
+      lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 50) nav(dx < 0 ? 1 : -1);
+        x0 = null;
+      });
 
-    function navLightbox(dir) {
-      lightboxIndex = (lightboxIndex + dir + fotosLightbox.length) % fotosLightbox.length;
-      actualizarLightbox();
-    }
-
-    function actualizarLightbox() {
-      document.getElementById('lightboxImg').src = fotosLightbox[lightboxIndex];
-      document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + fotosLightbox.length;
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (!document.getElementById('lightbox').classList.contains('active')) return;
-      if (e.key === 'Escape') cerrarLightbox();
-      if (e.key === 'ArrowLeft') navLightbox(-1);
-      if (e.key === 'ArrowRight') navLightbox(1);
-    });
+      // ---------- Botón fijo: se oculta cuando ya hay otro botón de reserva a la vista ----------
+      var sticky = document.getElementById('stickyCta');
+      var objetivos = document.querySelectorAll('.cta-observe');
+      if ('IntersectionObserver' in window) {
+        var visibles = new Set();
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) visibles.add(en.target); else visibles.delete(en.target);
+          });
+          sticky.classList.toggle('oculto', visibles.size > 0);
+        }, { threshold: 0.6 });
+        objetivos.forEach(function (o) { io.observe(o); });
+      } else {
+        sticky.classList.remove('oculto');
+      }
+    })();
   </script>
-
 </body>
 </html>
