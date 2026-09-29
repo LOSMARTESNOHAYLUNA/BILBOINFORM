@@ -248,7 +248,9 @@
       border-radius: 18px;
       text-align: center;
     }
-    .exp-card .icono { font-size: 2.4rem; margin-bottom: 14px; }
+    .exp-card .icono { margin-bottom: 14px; }
+    .exp-card .icono svg { width: 40px; height: 40px; color: var(--naranja); }
+    .icono-inline { width: 1.15em; height: 1.15em; vertical-align: -0.2em; color: currentColor; }
     .exp-card h4 {
       font-family: 'Manrope', sans-serif;
       font-size: 1.05rem;
@@ -309,9 +311,12 @@
       color: var(--blanco);
     }
     .ponencia-contenido li::before {
-      content: '✓';
-      position: absolute; left: 0;
-      color: var(--naranja); font-weight: 800; font-size: 1.1rem;
+      content: '';
+      position: absolute; left: 0; top: 0.45em;
+      width: 1rem; height: 1rem;
+      background-color: var(--naranja);
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
     }
     .ponencia-frase { margin-top: 22px; font-weight: 800; font-size: 1.1rem; line-height: 1.45; color: var(--blanco); }
 
@@ -406,8 +411,12 @@
     }
     .para-quien-lista li:last-child { border-bottom: none; }
     .para-quien-lista li::before {
-      content: '✓'; position: absolute; left: 20px; top: 17px;
-      color: var(--naranja); font-weight: 800; font-size: 1.25rem;
+      content: '';
+      position: absolute; left: 20px; top: 22px;
+      width: 1.05rem; height: 1.05rem;
+      background-color: var(--naranja);
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
     }
 
     /* ============ 10. COMPRA · 39 € ============ */
@@ -433,7 +442,14 @@
     .entrada-incluye-titulo { font-weight: 800; letter-spacing: 0.08em; text-align: left; color: var(--texto-suave); margin-bottom: 6px; }
     .entrada-incluye { list-style: none; text-align: left; margin-bottom: 26px; }
     .entrada-incluye li { position: relative; padding: 9px 0 9px 30px; color: var(--blanco); line-height: 1.45; }
-    .entrada-incluye li::before { content: '✓'; position: absolute; left: 0; color: var(--naranja); font-weight: 800; }
+    .entrada-incluye li::before {
+      content: '';
+      position: absolute; left: 0; top: 0.55em;
+      width: 1rem; height: 1rem;
+      background-color: var(--naranja);
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 13 9 18 20 6'/></svg>") center / contain no-repeat;
+    }
     .entrada-regalo {
       background: rgba(255,121,26,0.14);
       border: 2px dashed var(--naranja);
@@ -554,7 +570,8 @@
       .problema-grid { grid-template-columns: 1fr; gap: 14px; }
       .experiencia-grid { gap: 14px; }
       .exp-card { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: start; text-align: left; padding: 22px 20px; }
-      .exp-card .icono { grid-row: 1 / span 2; font-size: 2rem; margin: 2px 0 0; }
+      .exp-card .icono { grid-row: 1 / span 2; margin: 2px 0 0; }
+      .exp-card .icono svg { width: 32px; height: 32px; }
       .exp-card h4 { margin-bottom: 4px; }
       .carrusel-slide { width: 270px; }
       .carrusel-btn { display: none; }
@@ -608,7 +625,7 @@
   <!-- ============ 2. REGALO INCLUIDO CON LA ENTRADA ============ -->
   <section class="regalo">
     <div class="regalo-card">
-      <p class="regalo-tag">🎁 REGALO INCLUIDO CON TU ENTRADA</p>
+      <p class="regalo-tag"><svg class="icono-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4"></rect><rect x="4" y="12" width="16" height="9"></rect><line x1="12" y1="8" x2="12" y2="21"></line><path d="M12 8C12 8 9.5 3 7 4.5C4.5 6 6 8 12 8Z"></path><path d="M12 8C12 8 14.5 3 17 4.5C19.5 6 18 8 12 8Z"></path></svg> REGALO INCLUIDO CON TU ENTRADA</p>
       <p class="regalo-texto">Al reservar tu plaza para Club Élite recibirás también acceso al Radar “¿Dónde está mi dinero?”, una herramienta de diagnóstico empresarial para analizar 4 áreas clave de tu negocio:</p>
       <div class="regalo-areas">
         <span>Rentabilidad</span><span>Tesorería</span><span>Fiscalidad</span><span>Seguridad financiera</span>
@@ -638,22 +655,22 @@
       <h2 class="section-titulo">Mucho más que <em>una charla.</em></h2>
       <div class="experiencia-grid">
         <div class="exp-card">
-          <div class="icono">📊</div>
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="20" x2="5" y2="12"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="19" y1="20" x2="19" y2="14"></line></svg></div>
           <h4>Control</h4>
           <p>Entiende mejor qué ocurre con el dinero que genera tu empresa.</p>
         </div>
         <div class="exp-card">
-          <div class="icono">🎯</div>
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"></circle></svg></div>
           <h4>Captación</h4>
           <p>Descubre qué debería estar preparado antes de invertir en conseguir clientes.</p>
         </div>
         <div class="exp-card">
-          <div class="icono">🧩</div>
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.2"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.2"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.2"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.2"></rect></svg></div>
           <h4>Aplicación</h4>
           <p>Trabaja sobre situaciones empresariales reales mediante ejercicios por grupos.</p>
         </div>
         <div class="exp-card">
-          <div class="icono">🤝</div>
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8" r="2.8"></circle><circle cx="17" cy="9" r="2.2"></circle><path d="M3 20v-1.5C3 15.5 5.5 14 8.5 14s5.5 1.5 5.5 4.5V20"></path><path d="M14.5 14.4C16.7 14.6 19 15.9 19 18.2V20"></path></svg></div>
           <h4>Conexiones</h4>
           <p>Comparte ideas y oportunidades con otros empresarios de Bizkaia durante el networking y el cóctel.</p>
         </div>
@@ -774,7 +791,7 @@
           <li>Cóctel final.</li>
         </ul>
         <div class="entrada-regalo">
-          <strong>🎁 + ACCESO DE REGALO AL RADAR “¿DÓNDE ESTÁ MI DINERO?”</strong>
+          <strong><svg class="icono-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4"></rect><rect x="4" y="12" width="16" height="9"></rect><line x1="12" y1="8" x2="12" y2="21"></line><path d="M12 8C12 8 9.5 3 7 4.5C4.5 6 6 8 12 8Z"></path><path d="M12 8C12 8 14.5 3 17 4.5C19.5 6 18 8 12 8Z"></path></svg> + ACCESO DE REGALO AL RADAR “¿DÓNDE ESTÁ MI DINERO?”</strong>
           <p>Analiza rentabilidad, tesorería, fiscalidad y seguridad financiera de tu negocio.</p>
         </div>
         <p class="entrada-fecha">Este jueves · 1 octubre · 16:45 h</p>
